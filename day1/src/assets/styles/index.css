@@ -1,0 +1,90 @@
+.items {
+  position: relative;
+  width: 15vw;
+  height: 40vh;
+  margin: 2.4%;
+  background-color: rgb(255, 205, 205);
+  border-radius: 5px 25px;
+}
+
+.item {
+  margin: 5%;
+  text-align: center;
+}
+
+#root {
+  background-color: rgb(209, 255, 255);
+}
+
+#itemlist {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#search {
+  height: 36px;
+  font-size: 24px;
+  opacity: 0.8;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.493);
+}
+
+.buttondiv {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  padding: 10% 20%;
+  bottom: 0;
+  font-size: 24px;
+  width: 60%;
+}
+
+.decrement, .increment {
+  font-size: 24px;
+  width: 30px;
+  height: inherit;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.774);
+}
+
+.decrement {
+  background-color: tomato;
+}
+
+.increment {
+  background-color: palegreen;
+}
+
+#submit {
+  background-color: greenyellow;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.addbtn {
+  background-color: red;
+  border-radius: 10px;
+  font-size: 24px;
+  width: 100%;
+  height: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100px;
+}
+
+#cartimage {
+  font-size: 30px;
+  position: absolute;
+  top: 2%;
+  right: 4%;
+}
+
+#cartcount {
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  color: tomato;
+  right: 4.8%;
+}/*# sourceMappingURL=index.css.map */
