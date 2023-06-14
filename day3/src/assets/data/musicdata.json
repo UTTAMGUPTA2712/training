@@ -1,0 +1,182 @@
+[
+    {
+        "title": "Strange Invaders",
+        "name": "Johnathan",
+        "genre": "pop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        "logo_url": "https://media.giphy.com/media/blSTtZehjAZ8I/giphy.gif",
+        "duration": 2.2,
+        "count": 460680
+    },
+    {
+        "title": "Beastmaster, The",
+        "name": "Becka",
+        "genre": "hip hop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        "logo_url": "https://media.giphy.com/media/4oMoIbIQrvCjm/giphy.gif",
+        "duration": 3.61,
+        "count": 611541
+    },
+    {
+        "title": "Man in the White Suit",
+        "name": "Sheelah",
+        "genre": "hip hop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+        "logo_url": "https://media.giphy.com/media/FWi1f9Wn2hubC/giphy.gif",
+        "duration": 3.09,
+        "count": 564573
+    },
+    {
+        "title": "Efectos secundarios",
+        "name": "Joleen",
+        "genre": "country",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+        "logo_url": "https://media.giphy.com/media/aZmD30dCFaPXG/giphy.gif",
+        "duration": 3.93,
+        "count": 651467
+    },
+    {
+        "title": "RocketMan",
+        "name": "Ellary",
+        "genre": "pop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+        "logo_url": "https://media.giphy.com/media/FBzqZGthkW6KQ/giphy.gif",
+        "duration": 3.24,
+        "count": 840655
+    },
+    {
+        "title": "Legal Eagles",
+        "name": "Perla",
+        "genre": "country",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+        "logo_url": "https://media.giphy.com/media/blSTtZehjAZ8I/giphy.gif",
+        "duration": 3.84,
+        "count": 247228
+    },
+    {
+        "title": "Nothing But the Night",
+        "name": "Bethina",
+        "genre": "pop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+        "logo_url": "https://media.giphy.com/media/4oMoIbIQrvCjm/giphy.gif",
+        "duration": 1.64,
+        "count": 968440
+    },
+    {
+        "title": "Bloodfist",
+        "name": "Brant",
+        "genre": "rock",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+        "logo_url": "https://media.giphy.com/media/FWi1f9Wn2hubC/giphy.gif",
+        "duration": 1.17,
+        "count": 621221
+    },
+    {
+        "title": "Man in the Iron Mask",
+        "name": "Marylou",
+        "genre": "hip hop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+        "logo_url": "https://media.giphy.com/media/aZmD30dCFaPXG/giphy.gif",
+        "duration": 2.65,
+        "count": 345829
+    },
+    {
+        "title": "Curb Dance",
+        "name": "Stu",
+        "genre": "hip hop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+        "logo_url": "https://media.giphy.com/media/FBzqZGthkW6KQ/giphy.gif",
+        "duration": 3.75,
+        "count": 970864
+    },
+    {
+        "title": "Young Master",
+        "name": "Georgie",
+        "genre": "pop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+        "logo_url": "https://media.giphy.com/media/blSTtZehjAZ8I/giphy.gif",
+        "duration": 1.84,
+        "count": 284980
+    },
+    {
+        "title": "U2 3D",
+        "name": "Farrell",
+        "genre": "country",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+        "logo_url": "https://media.giphy.com/media/4oMoIbIQrvCjm/giphy.gif",
+        "duration": 1.97,
+        "count": 751077
+    },
+    {
+        "title": "Lady Windermere's Fan",
+        "name": "Ginger",
+        "genre": "pop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+        "logo_url": "https://media.giphy.com/media/FWi1f9Wn2hubC/giphy.gif",
+        "duration": 1.18,
+        "count": 934877
+    },
+    {
+        "title": "Seven Invisible Men ",
+        "name": "Evangelia",
+        "genre": "pop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+        "logo_url": "https://media.giphy.com/media/aZmD30dCFaPXG/giphy.gif",
+        "duration": 3.74,
+        "count": 334507
+    },
+    {
+        "title": "Police",
+        "name": "Dael",
+        "genre": "hip hop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+        "logo_url": "https://media.giphy.com/media/FBzqZGthkW6KQ/giphy.gif",
+        "duration": 3.65,
+        "count": 293122
+    },
+    {
+        "title": "Christmas Story 2",
+        "name": "Orland",
+        "genre": "rock",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+        "logo_url": "https://media.giphy.com/media/blSTtZehjAZ8I/giphy.gif",
+        "duration": 1.71,
+        "count": 823812
+    },
+    {
+        "title": "Arrival of a Train",
+        "name": "Bartolemo",
+        "genre": "hip hop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+        "logo_url": "https://media.giphy.com/media/4oMoIbIQrvCjm/giphy.gif",
+        "duration": 1.18,
+        "count": 369543
+    },
+    {
+        "title": "Battle in Seattle",
+        "name": "Zia",
+        "genre": "country",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+        "logo_url": "https://media.giphy.com/media/FWi1f9Wn2hubC/giphy.gif",
+        "duration": 2.53,
+        "count": 286556
+    },
+    {
+        "title": "Detective Story",
+        "name": "Cordelie",
+        "genre": "hip hop",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+        "logo_url": "https://media.giphy.com/media/aZmD30dCFaPXG/giphy.gif",
+        "duration": 3.5,
+        "count": 927437
+    },
+    {
+        "title": "Tinker, Tailor, Soldier",
+        "name": "Sydney",
+        "genre": "rock",
+        "musicurl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+        "logo_url": "https://media.giphy.com/media/FBzqZGthkW6KQ/giphy.gif",
+        "duration": 2.12,
+        "count": 657615
+    }
+]
