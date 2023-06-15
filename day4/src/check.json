@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 76.7933,
+        "lat": 30.7343
+    },
+    "weather": [
+        {
+            "id": 802,
+            "main": "Clouds",
+            "description": "scattered clouds",
+            "icon": "03d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 311.76,
+        "feels_like": 311.13,
+        "temp_min": 311.76,
+        "temp_max": 311.76,
+        "pressure": 999,
+        "humidity": 22,
+        "sea_level": 999,
+        "grnd_level": 961
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 6.02,
+        "deg": 299,
+        "gust": 7.36
+    },
+    "clouds": {
+        "all": 45
+    },
+    "dt": 1686823263,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1686786574,
+        "sunset": 1686837414
+    },
+    "timezone": 19800,
+    "id": 1274746,
+    "name": "Chandigarh",
+    "cod": 200
+}
