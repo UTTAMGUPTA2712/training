@@ -1,0 +1,62 @@
+
+#main{
+  height: 100vh;
+  width: 100vw;
+  background-color: #0f0f0f;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#openbutton{
+  font-size: 100px;
+  position: fixed;
+  right: 0;
+  top: 45%;
+  color: #0f0f0f6b;
+}
+#openbutton svg:hover{
+  margin-left: -60px;
+  transition: 400ms;
+  margin-right: 10px;
+}
+#openbutton svg{
+  margin-left: -70px;
+}
+.hide{
+  display: none;
+}
+#temperature ,#name,#date {
+  margin: 0;
+  padding: 0 25px ;
+  color: #0f0f0f70;
+  margin-top: 0;
+}
+#temperature{
+  font-size: 220px;
+}
+#name{
+  margin-top:10% ;
+  font-size: 100px;
+}
+#date{
+  margin-top: -2%;
+  font-size: 48px;
+}
+.container{
+  display:-webkit-inline-box;
+
+}
+#search{
+  height: 50px;
+  font-size: 25px;
+  color: #0f0f0f;
+  background-color: #ffffff00;
+  border-radius: 15px;
+}
+#changebtn{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ffffff00;
+  color: #0f0f0f;
+}
