@@ -1,0 +1,182 @@
+.cc-selector input{
+  margin:0;padding:0;
+  -webkit-appearance:none;
+     -moz-appearance:none;
+          appearance:none;
+}
+/* .admin{background-image:url(http://i.imgur.com/lXzJ1eB.png);} */
+/* .user{background-image:url(../asset/images/user.png);} */
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+  -webkit-filter: none;
+     -moz-filter: none;
+          filter: none;
+}
+.drinkcard-cc{
+  cursor:pointer;
+  background-size:contain;
+  background-repeat:no-repeat;
+  display:inline-block;
+  width:100px;height:70px;
+  -webkit-transition: all 100ms ease-in;
+     -moz-transition: all 100ms ease-in;
+          transition: all 100ms ease-in;
+  -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+     -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+          filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+  -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+     -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+          filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
+
+#container{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-position-y: bottom; 
+
+  background-size: cover;
+}
+h1:where(.css-dev-only-do-not-override-12jzuas).ant-typography{
+  margin: 0;
+  color: #FFFFFF;
+}
+h5:where(.css-dev-only-do-not-override-12jzuas).ant-typography{
+  margin: 0;
+  color: #C4C4C4;
+}
+h3:where(.css-dev-only-do-not-override-12jzuas).ant-typography{
+  margin: 0;
+  color: #9AA5B5;
+}
+:where(.css-dev-only-do-not-override-12jzuas).ant-input{
+  margin: 0;
+  color: aliceblue;
+}
+:where(.css-dev-only-do-not-override-12jzuas).ant-input::placeholder{
+  color: #C4C4C4;
+}
+#main{
+  height: 100%;
+  background: linear-gradient(to top right, #272A37e9 50%, #ffffff50 100%);
+  width: 100%;
+  /* color: whitesmoke !important; */
+  
+}
+.blue{
+  color: #1E90F5;
+}
+#main .anticon svg {
+  color: #c4c4c4;
+  font-weight: bolder;
+  height: 2rem;
+  width: 2rem;
+  margin-bottom: 5px;
+  margin-top: -10px;
+}
+#signup ,#login{
+  width: 550px;
+}
+.border{
+  border: 1px solid #888;
+  border-radius: 50px;
+  padding-left: 20px;
+  background-color: #323644;
+}
+.formdiv{
+  padding:3em;
+}
+.formdiv #space{
+  height: 35vh;
+}
+#profilehome{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(115deg, #eaf5e380 45%, #ffd88180 45%);
+  width: 100%;
+}
+#profileimage{
+  /* padding: 1%; */
+  height: 80%;
+  width: 80%;
+  box-shadow:2px 2px 2px 2px ;
+  background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/hexagon-wallpaper_YDF402CFOK.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#profile{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(115deg, #ffffff30 55%, #fd977880 55%);
+  ;
+  
+}
+#profiledetail{
+  color: #FFFFFF;
+  font-size: xx-large;
+  display: flex;
+  justify-content: space-between;
+
+}
+#profiledetail .topleft{
+  margin:0 0 0 3%;
+  /* padding: 0; */
+}
+#profiledetail .bottomright{
+  margin: 20% 10% 0 0;
+  /* padding: 0; */
+}
+#home{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#list{
+  display: flexbox;
+  justify-content: space-around;
+  overflow-y:scroll;
+  height: 90%;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #f0f0f060;
+}
+#item{
+  /* display: ; */
+  height: 35%;
+  border-radius: 10px;
+  width: 200px;
+  margin: 1.25%;
+  display: inline-block;
+  /* margin:; */
+  background-color: #FFFFFF;
+}
+#modeldiv{
+  display: flex;
+  /* justify-content: ; */
+  /* align-items: flex-end; */
+  
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+}
+#modeldiv input{
+  width: 250px;
+  /* border: ; */
+  border-style: none none solid none;
+}
+#modeldiv div{
+  margin-bottom: 15px;
+  font-size: large;
+}
