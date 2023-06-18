@@ -1,9 +1,10 @@
-import { MenuFoldOutlined, MenuUnfoldOutlined,ShoppingCartOutlined, LogoutOutlined, UserOutlined, HomeOutlined } from "@ant-design/icons";
-import { Button, Menu } from "antd";
+import { MenuFoldOutlined, MenuUnfoldOutlined, ShoppingCartOutlined, LogoutOutlined, UserOutlined, HomeOutlined } from "@ant-design/icons";
+import { Button, Menu, Popconfirm } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Logout from "./logout";
 
- const Navigation = ( {keyval} ) => {
+const Navigation = ({ keyval }) => {
     const navigate = useNavigate();
     function getItem(label, key, icon, children, type) {
         return {
@@ -22,28 +23,30 @@ import { useNavigate } from "react-router-dom";
             <HomeOutlined
                 onClick={() => {
                     navigate("/homepage");
-                }}
-            />
+                }} />
         ),
         getItem(
             "CART",
             "3",
-            <ShoppingCartOutlined 
+            <ShoppingCartOutlined
                 onClick={() => {
                     navigate("/cart");
-                }}
-            />
+                }} />
         ),
         getItem(
             "LOGOUT",
             "4",
-            <LogoutOutlined
-                onClick={() => {
-                    navigate("/");
-                }}
-            />
+            <Popconfirm
+                width="4vw"
+                placement="right"
+                title={"Are you sure want to Logout?"}
+                // description={"LOGOUT"}
+                onConfirm={() => {  localStorage.setItem("currentUser",""); navigate("/")}}
+                okText="Yes"
+                cancelText="No">
+                <LogoutOutlined />
+            </Popconfirm>
         ),
-
     ];
     const [collapsed, setCollapsed] = useState(true);
     const toggleCollapsed = () => {
@@ -54,7 +57,7 @@ import { useNavigate } from "react-router-dom";
             <div
                 id="menu"
                 style={{
-                    width: 150,
+                    width: "10vw",
                 }}
             >
                 <Button
