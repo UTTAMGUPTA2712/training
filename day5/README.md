@@ -1,3 +1,5 @@
+# Shop
+
 user shuld be able to signup with validation
 Should be able to login with same detail
 even after reloading he should be able to stay logged in 
