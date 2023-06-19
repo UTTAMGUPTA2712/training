@@ -33,7 +33,7 @@ const Cart = () => {
                         </div>
                         {
                             cart.map((item) => {
-                                if (item.count > 0) return <><CartItem click={click} countclick={countclick} data={item} /><CartItem countclick={countclick} data={item} /></>
+                                if (item.count > 0) return <><CartItem click={click} countclick={countclick} data={item} /></>
                                 else { return <></> }
                             })
                         }

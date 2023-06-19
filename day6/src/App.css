@@ -1,0 +1,80 @@
+#task,#taskhead{
+    display: flex;
+    width: 80vw;
+    border-radius: 10px;
+    margin: 2vh;
+}
+#task{
+    border: 1px solid #0f0f0f;
+    border-style: none none solid none;
+    box-shadow: 1px 2px;
+
+}
+#task:hover{
+    background-color: #525252;
+    color: #f0f0f0;
+
+}
+#taskhead{
+    background-color: #0f0f0f;
+    color: #f0f0f0;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 30vh;
+    margin-bottom: -2vh;
+}
+#taskhead h1{
+    font-size: 3vh
+}
+#taskpic{
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 6%;
+    height: 6%;
+}
+#detail{
+    margin-left: 5%;
+    width: 65%;
+}
+#detail h1{
+    margin: 0;
+}
+#date{
+    text-align: center;
+    width: 20%;
+}
+#form{
+    text-align: left;
+    margin: 3vh;
+    width: 60%;
+    margin-left: 20%;
+}
+#avatar{
+    border-radius: 25px;
+    background-color: #c7c7c7;
+    margin: 1vh;
+    height: 70px;
+    width: 30vw;
+    text-align: center;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#tasklist{
+    height: 70vh;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+::where(.css-dev-only-do-not-override-1wazalj)[class^="ant-form"] [class^="ant-form"], :where(.css-dev-only-do-not-override-1wazalj)[class*=" ant-form"] [class^="ant-form"]{
+    margin:0;
+
+}
+.css-dev-only-do-not-override-1wazalj{
+    margin: 0;
+}
+#home{
+    /* display: flex; */
+    text-align: center;
+}

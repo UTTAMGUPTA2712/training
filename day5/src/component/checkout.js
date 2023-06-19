@@ -18,8 +18,9 @@ const CheckOut = () => {
             sum+=(item.count*item.price)
         }
         settotal(sum)
-        sum=0;
     }
+    sum=0;
+
 }},[])
     const confirm = () => {
         modal.confirm({
