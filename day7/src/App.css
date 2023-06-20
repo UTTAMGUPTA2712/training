@@ -1,0 +1,81 @@
+#home {
+    background-image: url("../src/asset/images/image1.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+}
+#board {
+    margin: 5%;
+    background-color: #f0f0f059;
+    width: 90vw;
+    border-radius: 5px;
+    overflow-y: auto;
+    display: flexbox;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#search {
+    margin-top: 1vh;
+    border-radius: 10px;
+    background-color: aliceblue;
+    width: 16vw;
+    font-size: 1vw;
+    padding-right: 1vw;
+    display: flex;
+    padding-left: 10px;
+    border: 1px solid #f0f0f0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#add {
+    margin-right: 2vw;
+    font-size: 60px;
+}
+#bar {
+    position: fixed;
+    right: 5vw;
+    display: flex;
+}
+#title {
+    padding-left: 0.6vw;
+    background-color: #ffffffa0;
+    font-size: 5vh;
+    border: 0;
+    border-radius: 10px;
+    margin-bottom: 2vh;
+    width: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#editordiv {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#editor {
+    text-align: center;
+}
+#card {
+    margin: 1vh;
+    display: inline-block;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.btn {
+    margin-top: 5vh;
+    height: 5vh;
+    width: 8vw;
+    font-size: 3vh;
+    border-radius: 10px;
+    border: 2px solid #cca2ff;
+    background-color: #cc65e0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.btn:hover {
+    background-color: #9f4faf;
+    color: #f0f0f0;
+}
+#data {
+    overflow: hidden;
+}
+#icondiv {
+    width: 100%;
+    text-align: right;
+    font-size: 20px;
+}

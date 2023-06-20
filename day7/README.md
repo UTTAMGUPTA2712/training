@@ -1,5 +1,5 @@
-# Task assignment
-using redux toolkit
+# Notes board using html radiator
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
