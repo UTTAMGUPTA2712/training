@@ -1,6 +1,8 @@
-# Notes board using html radiator
+# proof of concept(persist in redux,create-async,redux-toolkit)
 
-text editor usaage
+atleast 3 api hits with persist dependency
+extrareducer ,create-async in readux toolkit(pending,rejected,fulfilled)
+use api calls
 
 # Getting Started with Create React App
 

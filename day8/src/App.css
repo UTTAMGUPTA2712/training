@@ -1,0 +1,45 @@
+#home {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    height: 83.8vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background-color: rgba(134, 221, 255, 0.671);
+    width: 100vw;
+}
+.card {
+    display: block;
+    margin: 2vw;
+    width: 256px;
+    text-align: center;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 10px ;
+}
+.card img {
+    width: 60%;
+}
+#joke{
+    background-color: rgba(0, 0, 0, 0.589);
+    padding:0 2vh;
+    color: aliceblue;
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 50vw;
+    text-align: right;
+    min-height: 16vh;
+}
+#uselessfact{
+    height: 14vh;
+    max-width: 40vw;
+    margin-left: 2vw;
+    padding-left: 1vw;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#uselessfact button{
+    font-size: large;
+    border: 1px solid black;
+    border-radius: 2px;
+}
