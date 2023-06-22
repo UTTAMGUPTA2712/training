@@ -7,7 +7,7 @@ const initialValue = {
 export const resumeSlice = createSlice({
     name: "resume",
     initialState: initialValue,
-    reducer: {
+    reducers: {
         login: (state, action) => {
             let flag=true
             for (let user of state.users) {

@@ -10,9 +10,9 @@ const Otp = () => {
     const dispatch = useDispatch();
     const phoneNumber = useSelector((state) => state.phoneNumber);
     const handleClick = () => {
-        if (otp == process.env.REACT_APP_OTP) navigate("/homepage");
+        if (otp =="1111") {navigate("/homepage");
         dispatch(auth());
-        dispatch(login(phoneNumber));
+        dispatch(login(phoneNumber));}
     };
     return (
         <>

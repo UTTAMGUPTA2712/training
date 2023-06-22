@@ -7,6 +7,7 @@ import Otp from "./otpPage";
 import HomePage from "./homePage";
 import { phoneNumberAuthe } from "../redux/slice/authSlice";
 
+
 const options = [];
 for (let i = 80; i <= 99; i++) {
     options.push({
@@ -25,7 +26,7 @@ const LoginPage = () => {
             const value=option+phoneNumber
             console.log("xsuxgu-----------------",value)
             dispatch(phoneNumberAuthe(value))
-            // navigate("/otp")
+            navigate("/otp")
         }
     }
     return (
@@ -38,7 +39,7 @@ const LoginPage = () => {
                     <button disabled={!(option&&phoneNumber)} onClick={handleclick}>GET OTP</button>
                 </div>
             </div>
-            <HomePage/>
+            {/* <HomePage/> */}
         </>
     );
 };

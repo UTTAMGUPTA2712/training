@@ -7,7 +7,7 @@ const initialValue = {
 export const authSlice = createSlice({
     name: "auth",
     initialState: initialValue,
-    reducer: {
+    reducers: {
         auth: (state) => {
             state.isAuth = true;
         },

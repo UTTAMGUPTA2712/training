@@ -27,7 +27,7 @@ const ResumePage = () => {
     const [experiencevalue, setExperienceValue] = useState()
     const [experience, setExperience] = useState([])
     const saveExperience = (e) => { e.preventDefault(); if (experiencename && experiencevalue) { setExperience([...experience, { name: experiencename, value: experiencevalue }]); setExperienceValue(""); setExperienceName("") } }
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const [validate, setvalidate] = useState(false)
     // const onChangeHandler = (key, value) => {
@@ -136,7 +136,7 @@ const ResumePage = () => {
                         })}
                     </div>
                     <button
-                    // onClick={()=>navigate("/home")}
+                    onClick={()=>navigate("/home")}
                     >CANCEL</button>
                     <button onClick={handlesubmit} type="submit">SUBMIT</button>
                     <button onClick={handlepreview}>PREVIEW</button>
