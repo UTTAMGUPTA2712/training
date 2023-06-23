@@ -1,5 +1,5 @@
 # Resume builder
-
+# day 10 continued
 media query
 use env variable, use auth to route through private router
 
