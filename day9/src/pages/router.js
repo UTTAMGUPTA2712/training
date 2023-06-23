@@ -4,11 +4,10 @@ import Otp from "./otpPage";
 import HomePage from "./homePage";
 import ResumePage from "./resumePage";
 import { useSelector } from "react-redux";
+import TemplatePicker from "../component/templatePicker";
 const RouterPage=()=>{
-    
     const isAuth = useSelector((state) => state.auth.isAuth);
     const phonenumber = useSelector((state) => state.auth.phoneNumber);
-    console.log(isAuth,phonenumber);
     const publicRouter = [
         {
             path: "/",
@@ -34,13 +33,17 @@ const RouterPage=()=>{
             path: "/form",
             component: <ResumePage />,
         },
+        {
+            path: "/template",
+            component: <TemplatePicker />,
+        },
     ];
     return (
         <>
             <BrowserRouter>
                 <Routes>
-                    {publicRouter.map((routerRoute) => { console.log("xuasux"); return <Route path={`${routerRoute.path}`} element={routerRoute.component} /> })}
-                    { phonenumber && otpRouter.map((otpRoute) => { return <Route path={`${otpRoute.path}`} element={otpRoute.component} /> })}
+                    {publicRouter.map((routerRoute) => { return <Route path={`${routerRoute.path}`} element={routerRoute.component} /> })}
+                    {!isAuth&& phonenumber && otpRouter.map((otpRoute) => { return <Route path={`${otpRoute.path}`} element={otpRoute.component} /> })}
                     {isAuth && privateRouter.map((privateRoute) => { return <Route path={`${privateRoute.path}`} element={privateRoute.component} /> })}
                 </Routes>
             </BrowserRouter>

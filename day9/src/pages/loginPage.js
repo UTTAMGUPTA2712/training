@@ -3,11 +3,7 @@ import { PhoneOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Otp from "./otpPage";
-import HomePage from "./homePage";
 import { phoneNumberAuthe } from "../redux/slice/authSlice";
-
-
 const options = [];
 for (let i = 80; i <= 99; i++) {
     options.push({
@@ -22,9 +18,7 @@ const LoginPage = () => {
     const navigate=useNavigate()
     const handleclick=()=>{
         if(options&&phoneNumber){
-            
             const value=option+phoneNumber
-            console.log("xsuxgu-----------------",value)
             dispatch(phoneNumberAuthe(value))
             navigate("/otp")
         }
@@ -39,7 +33,6 @@ const LoginPage = () => {
                     <button disabled={!(option&&phoneNumber)} onClick={handleclick}>GET OTP</button>
                 </div>
             </div>
-            {/* <HomePage/> */}
         </>
     );
 };

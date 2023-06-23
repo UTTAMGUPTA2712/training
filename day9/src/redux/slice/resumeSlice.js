@@ -1,36 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialValue = {
-    currentUser:null,
-    users: [],
+    users:{}
 };
 export const resumeSlice = createSlice({
     name: "resume",
     initialState: initialValue,
     reducers: {
         login: (state, action) => {
-            let flag=true
-            for (let user of state.users) {
-                if (action.payload === user.phoneNumber) {
-                    state.currentUser = user;
-                    flag=false;
-                }
-            }
-            if(flag) {
-                state.currentUser={phoneNumber:action.payload,data:[]}
-            }
-        },
-        logout: (state) => {
-            for (let user of state.users) {
-                if (state.currentUser.phoneNumber === user.phoneNumber) {
-                    user = state.currentUser;
-                }
-            }
+                const cur=action.payload;
+                const resume=state.users[cur]||[];
+                state.users[cur]=[...resume]
         },
         addResume:(state,action)=>{
-            state.currentUser.data.push(action.payload)
+            state.users[action.payload.user].push(action.payload.data)
+        },
+        deleter:(state,action)=>{
+            state.users[action.payload.user]=state.users[action.payload.user].filter((c,cv)=>cv!=action.payload.index)
         }
     },
 });
-export const { login, logout,addResume } = resumeSlice.actions;
+export const { login, addResume,deleter } = resumeSlice.actions;
 export default resumeSlice.reducer;

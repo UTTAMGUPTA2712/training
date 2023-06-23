@@ -12,10 +12,14 @@ export const authSlice = createSlice({
             state.isAuth = true;
         },
         phoneNumberAuthe: (state, action) => {
-            console.log("xsuxusgxu");
             state.phoneNumber = action.payload;
+            state.isAuth = false;
         },
+        logout:(state)=>{
+            state.isAuth = false;
+            state.phoneNumber=null;
+        }
     },
 });
-export const { auth, phoneNumberAuthe } = authSlice.actions;
+export const { auth, phoneNumberAuthe,logout } = authSlice.actions;
 export default authSlice.reducer;

@@ -1,0 +1,52 @@
+.options{
+    border: 3px solid #ffffff00;
+    width: 350px;
+    height: 500px;
+    display: block;
+}
+.tick{
+    border: 3px solid tomato;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#picker{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.untick{
+    opacity: 0.8;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+#carddata{
+    width: 200px;
+    height: 300px;
+}
+#resumecard{
+    display: inline-block;
+    position: relative;
+}
+#btn{
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: aliceblue;
+    font-size: xx-large;
+}
+#resumediv{
+    display: flex;
+    margin: 2vh;
+    gap: 2vh;
+    flex-wrap: wrap;
+}
+#addresume{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 5rem;
+}
+#modal{
+    width: 40vw;
+    height: 75vh;
+    display: block;
+}
