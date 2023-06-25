@@ -1,54 +1,72 @@
 import { useSelector, useDispatch } from "react-redux"
-import { FolderAddOutlined, FolderViewOutlined, DeleteOutlined, DownloadOutlined, LogoutOutlined } from "@ant-design/icons";
+import { FolderAddOutlined, FolderViewOutlined, DeleteOutlined, DownloadOutlined, LogoutOutlined, EditOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import ResumeCard from "../component/resumeCard";
 import { useState } from "react";
-import { Modal } from "antd";
-import { deleter } from "../redux/slice/resumeSlice";
-import JsPDF from "jspdf";
-import { logout } from "../redux/slice/authSlice";
+import { deleter, templateUpdater } from "../redux/slice/resumeSlice";
+
+import jsPDF from "jspdf";
+import Header from "../component/header";
+import Preview from "../component/preview";
 const HomePage = () => {
     const userdata = useSelector((state) => state.auth.phoneNumber)
     const data = useSelector((state) => state.resume.users[userdata])
-    const [resumedata, setResumedata] = useState(data)
     const navigate = useNavigate()
     const [isModalOpen, setIsModalOpen] = useState(false);
     const dispatch = useDispatch()
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
+    const [template, settemplate] = useState("")
+    const [formtype, setformtype] = useState("")
+    const changeformtypesort = (value) => {
+        setformtype(value)
+    }
+    const changetemplatesort = (value) => {
+        settemplate(value)
+    }
     const handleDelete = (index) => {
         dispatch(deleter({ user: userdata, index: index }))
     }
-    const handleView = () => {
-        console.log("gxvasjgxv")
-        setIsModalOpen(true);
+    const handledown = (data) => {
+        const report = new jsPDF('portrait', 'pt', 'a4');
+        const element = document.querySelector('#res' + data);
+        const options = {
+          top: 10,
+          bottom: 10,
+          left: 10,
+          right: 10,
+          html2canvas: {
+            scale: 2.8 
+          }
+        };
+        report.html(element, options).then(() => {
+          report.save(userdata+'resume.pdf');
+        });
     }
-    const handledown = () => {
-        const doc = new JsPDF("portrait", "pt", "a4");
-        doc.html(document.querySelector("#modal")).then(() => {
-            doc.save("resume.pdf")
-        })
+    const changetemplate = (value, index) => {
+        dispatch(templateUpdater({ user: userdata, index: index, value: value }))
     }
+    const editResume = (value, index) => {
+        navigate("/form", { state: { data: value, index: index } })
+    }
+    console.log(template, formtype)
     return (<>
-        <LogoutOutlined id="logout" onClick={() => { dispatch(logout()); navigate("/") }} />
-        <Modal width={"44vw"} title="VIEW RESUME" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-            <div id="modal"><ResumeCard id="downdata" data={resumedata} /></div>
-        </Modal>
-        <div id="resumediv">
-            {data.map((cv, index) => {
-                return <>
-                    <div id="resumecard"><div id="carddata"><ResumeCard data={cv} index={index} /></div>
-                        <div id="btn">
-                            <DownloadOutlined onClick={() => { handledown(); setResumedata(cv) }} />
-                            <FolderViewOutlined onClick={() => { setResumedata(cv); handleView() }} />
-                            <DeleteOutlined onClick={() => handleDelete(index)} /></div></div>
-                </>
-            })}</div>
-        <FolderAddOutlined onClick={() => navigate("/template")} id="addresume" />
+        <div id="mainbody">
+            <Header template={template} formtype={formtype} changeformtype={changeformtypesort} changetemplate={changetemplatesort} />
+            <div id="resumediv">
+                {data.map((cv, index) => {
+                    if ((template == "" || cv.templatedata == template) && (formtype == "" || cv.formtype == formtype)) {
+                        return <>
+                            <div id="resumecard"><div id={"res" + index} className="carddata"><ResumeCard data={cv} index={index} /></div>
+                                <div id="btn">
+                                    <DownloadOutlined onClick={() => { handledown(index) }} />
+                                    <Preview changetemplate={changetemplate} data={cv} index={index} />
+                                    <DeleteOutlined onClick={() => handleDelete(index)} />
+                                    {(cv.formtype == "draft") && <EditOutlined onClick={() => editResume(cv, index)} />}
+                                </div></div>
+                        </>
+                    }
+                })}</div>
+            <FolderAddOutlined onClick={() => navigate("/template")} id="addresume" />
+        </div>
     </>)
 }
 export default HomePage

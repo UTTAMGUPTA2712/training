@@ -2,11 +2,11 @@ import { useSelector } from "react-redux"
 import { PhoneOutlined, MailOutlined, HomeOutlined } from "@ant-design/icons"
 import { Rate } from 'antd';
 import "./temp4.css"
-import imag from "C:/Users/uttam/Desktop/training/day9/src/asset/images/img4.png"
+import imag from "../asset/images/img4.png"
 const ResumeTemplate4 = ({ data }) => {
     const phone = useSelector((state) => state.auth.phoneNumber)
     return (<>
-        <div id="temp2">
+        <div id="temp4">
             <div id="left">
                 <img src={imag}></img>
                 <div id="space">

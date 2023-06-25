@@ -3,7 +3,7 @@ import ResumeTemplate2 from "./resumeTemplate2";
 import ResumeTemplate3 from "./resumeTemplate3";
 import ResumeTemplate4 from "./resumeTemplate4";
 const ResumeCard = ({ data }) => {
-    const template=data.templatedata||2;
+    const template=data?.templatedata||1;
     const temp=()=>{
         switch(template){
             case 1:return <><ResumeTemplate1 data={data}/></>
@@ -12,7 +12,6 @@ const ResumeCard = ({ data }) => {
             case 4:return <><ResumeTemplate4 data={data}/></>
         }
     }
-    console.log(data);
     return (
         <>
             {temp()}

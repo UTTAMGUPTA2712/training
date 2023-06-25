@@ -4,7 +4,7 @@ import Otp from "./otpPage";
 import HomePage from "./homePage";
 import ResumePage from "./resumePage";
 import { useSelector } from "react-redux";
-import TemplatePicker from "../component/templatePicker";
+import TemplatePicker from "./templatePicker";
 const RouterPage=()=>{
     const isAuth = useSelector((state) => state.auth.isAuth);
     const phonenumber = useSelector((state) => state.auth.phoneNumber);

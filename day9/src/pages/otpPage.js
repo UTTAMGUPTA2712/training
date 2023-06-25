@@ -14,19 +14,23 @@ const Otp = () => {
             navigate("/home");
             dispatch(auth());
             dispatch(login(phoneNumber));
+        }else{
+            navigate("/")
         }
     };
     return (
         <>
-            <div id="logmain">
-                <div>
+            <div id="loghome">
+                <div id="logmain">
                     <OtpInput
+                        inputStyle={{width:"35px",height:"60px",backgroundColor:"#0f0f0f",color:"#f0f0f0",fontSize:"38px"}}
                         value={otp}
                         onChange={setotp}
                         numInputs={4}
                         renderSeparator={<span>-</span>}
                         renderInput={(props) => <input {...props} />}
                     />
+                    <br/>
                     <button onClick={handleClick}>LOGIN</button>
                 </div>
             </div>

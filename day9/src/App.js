@@ -4,16 +4,17 @@ import { persistStore } from "redux-persist";
 import "./App.css";
 import store from "./redux/store/store";
 import RouterPage from "./pages/router";
+import Loading from "./component/loading";
+import DownloadPdf from "./component/downloadPdf";
 const App = () => {
     let persistor = persistStore(store);
     return (<>
         <Provider store={store}>
-            <PersistGate loading={<h1>LOADING... just a moment</h1>} persistor={persistor}>
+            <PersistGate loading={<Loading/>} persistor={persistor}>
                 <RouterPage />
+                {/* <DownloadPdf/> */}
             </PersistGate>
         </Provider>
     </>)
 }
 export default App;
-
-

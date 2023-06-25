@@ -1,67 +1,117 @@
-#temp3   {
-    display: flex;
+#temp3 {
+    position: relative;
     width: 100%;
-    justify-content: center;
     height: 100%;
-    font-family: -apple-system system-ui BlinkMacSystemFont "Segoe UI"
-        Helvetica Arial sans-serif "Apple Color Emoji"
-        "Segoe UI Emoji"
-        "Segoe UI Symbol";
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-style: normal;
+    background-color: #F5F5F5;
+    padding: 3% 3% 5% 3%;
+    box-sizing: border-box;
+    /* font-size: 5px; */
 }
-#temp3   #right {
-    padding-left: 3%;
-    padding-right: 10%;
-    position: flex;
+
+#temp3 #headerdiv {
+    display: flex;
     align-items: center;
-    background-color: #D9E7F0;
-    width: 60%;
-    height: 100%;
-}
-#temp3   #left {
-    padding-left: 3%;
-    width: 40%;
-    height: 100%;
-    padding-right: 10%;
-
+    margin-bottom: 5%;
+    /* height: 3em; */
+    background-color: #2e2e2e;
+    color: #F5F5F5;
+    padding: 0.5em;
 }
 
-
-#temp3 h1 {
-    font-size: 100%;
-}
-#temp3 h2 {
-    padding: 1.5% 1.5%;
-    background-color: #ffffff;
-    font-size: 70%;
-}
-#temp3 h3{
-    font-size: 60%;
+#temp3 #headerdiv img {
+    width: 10em;
+    border-radius: 50%;
+    margin-right: 2%;
 }
 
-#temp3 h4{
-    font-size: 40%;
+#temp3 #headerdiv #contact {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+#temp3 #headerdiv h2 {
+    font-size: 4em;
+    margin: 0;
+    margin-bottom: 1%;
+}
+
+#temp3 #headerdiv p {
+    font-size: 1em;
+    margin-bottom: 0.5%;
+    display: flex;
+    align-items: center;
+}
+
+#temp3 #headerdiv p svg {
+    margin-right: 5px;
+}
+
+#temp3 #content {
+    display: flex;
+    /* flex-direction: row; */
+}
+
+#temp3 #left {
+    flex: 1;
+}
+
+#temp3 #left h2 {
+    font-size: 2em;
+    margin-bottom: 2%;
+}
+
+#temp3 #left h4 {
+    font-size: 1.5em;
+    margin-bottom: 1%;
+}
+
+#temp3 #right {
+    flex: 1;
+}
+
+#temp3 #right h2 {
+    font-size: 2em;
+    margin-bottom: 2%;
+}
+
+#temp3 .education {
+    display: flex;
+    margin-bottom: 1%;
+}
+
+#temp3 .education h4 {
+    font-size: 1.5em;
+    margin-right: 2%;
+}
+
+#temp3 h3 {
+    font-size: 1.8em;
+    margin-bottom: 1%;
 }
 
 #temp3 p {
-    font-size: 30%;
-    color: #0f0f0f;
+    font-size: 1em;
+    margin-bottom: 0.5%;
 }
 
-#temp3 #table {
-    display: flex;
+/* button {
+    margin-top: 5%;
+    font-size: 1.2em;
+    padding: 0.5em 1em;
+    background-color: #4285F4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    flex-direction: column;
+button:hover {
+    background-color: #3367D6;
 }
-#temp3 .block {
-    display: flex;
 
-}
-#temp3 .block h4 {
-    width: 50%;
-}
-#temp3 img{
-    width: 100%;
-    border-radius: 25%;
-    margin: 3%;
-}
+button:active {
+    background-color: #2F5BB7;
+} */

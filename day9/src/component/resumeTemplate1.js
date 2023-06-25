@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import {PhoneTwoTone,MailTwoTone,HomeTwoTone} from "@ant-design/icons"
 import { Rate } from 'antd';
 import "./temp1.css"
-import imag from "C:/Users/uttam/Desktop/training/day9/src/asset/images/img1.png"
+import imag from "../asset/images/img1.png"
 const ResumeTemplate1 = ({ data }) => {
     const phone=useSelector((state)=>state.auth.phoneNumber)
     console.log(data)
@@ -18,7 +18,7 @@ const ResumeTemplate1 = ({ data }) => {
         {(data?.skills||[{name:"skill",value:3},{name:"skill",value:6}]).map((skill)=>{
             return <>
         <h4>{skill.name}</h4>
-        <Rate style={{fontSize:"80%"}} disabled defaultValue={(skill.value)/2} />
+        <Rate style={{fontSize:"1.1em"}} disabled defaultValue={(skill.value)/2} />
             </>
         })}
     </div>

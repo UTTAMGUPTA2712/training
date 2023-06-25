@@ -1,4 +1,5 @@
-#temp2 {
+#temp4 {
+    position: relative;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -10,7 +11,7 @@
     font-style: normal;
 }
 
-#temp2 #right {
+#temp4 #right {
     padding: 0 3%;
     position: flex;
     align-items: center;
@@ -19,59 +20,51 @@
     background-color: #f0f0f0;
     color: #2e2e2e;
 }
-#temp2 h4{
-    font-size: 2%;
-}
 
-#temp2 #left {
+#temp4 #left {
     width: 40%;
     background-color: #2e2e2e;
-    color: #ffffff;
+    color: #ffffff !important;
     height: 100%;
-
-
 }
-
-#temp2 h2 {
-    font-size: 3%;
-}
-
-#temp2 h1 {
-    display: inline-block;
+#temp4 h1 {
     text-align: center;
     margin-bottom: 0;
     padding: 1.5% 1.5% 0 1.5%;
-    font-size: 6%;
+    font-size: 3em;
     background: linear-gradient(to bottom, #f0f0f0 50%, #fff566 70%);
 }
-
-#temp2 p {
-    font-size: 2%;
+#temp4 h2 {
+    padding: 1.5% 1.5%;
+    font-size: 2.5em;
 }
-
-#temp2 #table {
+#temp4 h3{
+    font-size: 2em;
+}
+#temp4 h4{
+    font-size: 1.5em;
+}
+#temp4 p {
+    font-size: 1em;
+}
+#temp4 #table {
     display: flex;
 
     flex-direction: column;
 }
-
-#temp2 .block {
+#temp4 .block {
     display: flex;
 
 }
-
-#temp2 .block h4 {
+#temp4 .block h4 {
     width: 50%;
 }
-
-#temp2 img {
+#temp4 img {
     width: 100%;
 }
-
-#temp2 #mid {
+#temp4 #mid {
     text-align: center;
 }
-
-#temp2 #space {
+#temp4 #space {
     padding-left: 3%;
 }

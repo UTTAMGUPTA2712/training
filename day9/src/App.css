@@ -1,8 +1,9 @@
+
 .options{
-    border: 3px solid #ffffff00;
-    width: 350px;
-    height: 500px;
-    display: block;
+    width: 300px;
+    height: 450px;
+    background-color: white;
+    font-size: 6px;
 }
 .tick{
     border: 3px solid tomato;
@@ -17,36 +18,193 @@
     opacity: 0.8;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-#carddata{
+.carddata{
     width: 200px;
     height: 300px;
+    background-color: #f0f0f0;
+    font-size: 4px;
 }
 #resumecard{
     display: inline-block;
+    width: 200px;
+    height: 300px;
     position: relative;
+    box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 1px, rgba(255, 255, 255, 0.07) 0px 2px 2px, rgba(255, 255, 255, 0.07) 0px 4px 4px, rgba(255, 255, 255, 0.07) 0px 8px 8px, rgba(255, 255, 255, 0.07) 0px 16px 16px;
 }
 #btn{
-    padding: 5px;
+    height: 100%;
+    width: 100%;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: aliceblue;
-    font-size: xx-large;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    font-size: 4em;
+    opacity: 0;
+    justify-content: space-around;
+}
+
+#btn:hover{
+    transition:300ms;
+    opacity: 1;
 }
 #resumediv{
     display: flex;
     margin: 2vh;
     gap: 2vh;
     flex-wrap: wrap;
+    overflow-y: auto;
+    height: 90vh;
 }
 #addresume{
     position: fixed;
     bottom: 2rem;
     right: 2rem;
     font-size: 5rem;
+    color: #f0f0f0;
 }
 #modal{
-    width: 40vw;
-    height: 75vh;
+    width: 700px;
+    height: 1050px;
     display: block;
+}
+#loghome,#mainbody ,#root{
+    height: 100vh;
+    width: 100vw;
+    /* background-image: url("./asset/images/wall1.png"); */
+    background-color: #424242;
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+}
+#loghome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
+    width: 50vw;
+    font-size: x-large;
+    backdrop-filter: blur(3px);
+    color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#logmain button{
+    padding: 1vh 2vh;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0a0;
+    color: #0f0f0f;
+}
+#logmain button:disabled{
+    cursor: no-drop;
+}
+#logout{
+    font-size: 3rem;
+    color:#f0f0f0;
+    position: absolute;
+    right:5px;
+    top: 5px;
+}
+#header{
+    width: 100%;
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    background-color: #0f0f0fa0;
+    height: 3.2rem;
+    padding-top: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.selectedspan{
+    font-size: 2rem;
+    padding: 0 5px;
+    border: 1px solid #f0f0f0;
+}
+.unselectedspan{
+    font-size: 2rem;
+    padding: 0 5px;
+    border: 1px solid #0f0f0f;
+    background-color: #f0f0f0;
+    color: #0f0f0f;
+}
+.redborder{
+    border: 2px solid red !important;
+}
+#formdiv{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#form input{
+    height: 2rem;
+    width: 25rem;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+#form input[type=textarea]{
+    height:6rem;
+}
+#formtable{
+    table-layout: fixed;
+}
+#formtable td{
+    width: 20vw;
+    font-size: 1.2rem;
+    color: #f0f0f0;
+}
+#formtable p{
+    font-size: 0.8rem;
+}
+#skill{
+    overflow-y: auto;
+    height: 5rem;
+}
+#exp{
+    overflow-y: auto;
+    height: 7rem;
+}
+#templatepicker{
+    padding: 2rem;
+}
+#templatepicker button{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    height: 3rem;
+    width: 6rem;
+    font-size: larger;
+    font-weight: bolder;
+}
+#form .anticon{
+    font-size: 3rem;
+}
+#back{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+}
+#btns{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+.btns h1{
+    margin: 0;
+}
+#btns .anticon:hover{
+    background-color: #f0f0f09d;
 }
