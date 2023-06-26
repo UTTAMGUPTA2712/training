@@ -11,7 +11,7 @@ const TemplatePicker = () => {
         navigate("/form",{state:{template:option}})
     }
     return (<>
-        <h1 style={{textAlign:"center",margin:0}}>CHOOSE A TEMPLATE</h1>
+        <h1 style={{textAlign:"center",margin:0,color:"#f0f0f0"}}>CHOOSE A TEMPLATE</h1>
 
     <div id="templatepicker">
         <TemplateOption option={option} changeoption={changeOption}/>

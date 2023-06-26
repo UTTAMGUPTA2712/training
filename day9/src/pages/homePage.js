@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ResumeCard from "../component/resumeCard";
 import { useState } from "react";
 import { deleter, templateUpdater } from "../redux/slice/resumeSlice";
+import {  Popconfirm } from 'antd';
 
 import jsPDF from "jspdf";
 import Header from "../component/header";
@@ -29,16 +30,16 @@ const HomePage = () => {
         const report = new jsPDF('portrait', 'pt', 'a4');
         const element = document.querySelector('#res' + data);
         const options = {
-          top: 10,
-          bottom: 10,
-          left: 10,
-          right: 10,
-          html2canvas: {
-            scale: 2.8 
-          }
+            top: 10,
+            bottom: 10,
+            left: 10,
+            right: 10,
+            html2canvas: {
+                scale: 2.8
+            }
         };
         report.html(element, options).then(() => {
-          report.save(userdata+'resume.pdf');
+            report.save(userdata + 'resume.pdf');
         });
     }
     const changetemplate = (value, index) => {
@@ -59,7 +60,16 @@ const HomePage = () => {
                                 <div id="btn">
                                     <DownloadOutlined onClick={() => { handledown(index) }} />
                                     <Preview changetemplate={changetemplate} data={cv} index={index} />
-                                    <DeleteOutlined onClick={() => handleDelete(index)} />
+                                    <Popconfirm
+                                        title="Delete the Resume"
+                                        description="Are you sure to delete this resume?"
+                                        okText="Yes"
+                                        onConfirm={() => handleDelete(index)}
+                                        cancelText="No"
+                                    >
+                                        <DeleteOutlined/>
+                                    </Popconfirm>
+
                                     {(cv.formtype == "draft") && <EditOutlined onClick={() => editResume(cv, index)} />}
                                 </div></div>
                         </>

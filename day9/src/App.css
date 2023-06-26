@@ -71,11 +71,11 @@
 #loghome,#mainbody ,#root{
     height: 100vh;
     width: 100vw;
-    /* background-image: url("./asset/images/wall1.png"); */
+    background-image: url("./asset/images/wall2.jpg");
     background-color: #424242;
-    /* background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; */
+    background-size: cover;
 }
 #loghome{
     display: flex;
@@ -192,6 +192,7 @@
     position: fixed;
     top: 1rem;
     left: 1rem;
+    color: #f0f0f0;
 }
 #btns{
     position: fixed;
@@ -200,7 +201,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
+    color: #f0f0f0;
 }
 .btns h1{
     margin: 0;

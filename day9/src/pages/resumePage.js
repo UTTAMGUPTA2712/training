@@ -142,7 +142,9 @@ const ResumePage = () => {
                         <tr ><td><label>Graduation Result(%)</label></td><td>
                             <input type="number" onChange={(e) => onChangeHandler("graduationr", e.target.value)} className={(!validate || formdata.graduationr) ? "" : "redborder"} value={formdata.graduationr ?? ""} placeholder="ENTER YOUR GRADUATION RESULT(%)"></input>
                         </td></tr>
-                        <tr ><td><label>Skills</label></td><td>
+                        <tr ><td><label>Skills</label>
+                        <p>{`{ TYPE DOWN THE SKILL AND THEN RATE HOW GOOD YOU ARE THEN ADD THE SKILL }`}</p>
+                        </td><td>
                             <input type="text" onChange={(e) => setSkillName(e.target.value)} className={(!validate || formdata.skills) ? "" : "redborder"} value={skillname ?? ""} placeholder="ENTER YOUR SKILLS"></input>
                             <Col span={12}>
                                 <Slider style={{ backgroundColor: "white", width: "25rem", marginLeft: 0, color: "white" }} min={1} max={10} onChange={(e) => { setskillscale(e) }} status={(!validate || formdata.skills) ? "" : "error"} value={typeof skillscale === 'number' ? skillscale : 0} />
@@ -151,7 +153,9 @@ const ResumePage = () => {
                             </td><td><div id="skill">{(formdata?.skills ?? []).map((skill) => {
                                 return <p>{skill.name}:{skill.value}</p>
                             })}</div></td></tr>
-                        <tr ><td><label>Experience</label></td><td>
+                        <tr ><td><label>Experience</label>
+                        <p>{`{ TYPE DOWN THE EXPERIENCE TYPE AND THEN EXPLAIN WHAT YOU DID IN THAT THEN ADD THE EXPERIENCE }`}</p>
+                        </td><td>
                             <input type="text" onChange={(e) => setExperienceName(e.target.value)} className={(!validate || formdata.experience) ? "" : "redborder"} value={experiencename ?? ""} placeholder="ENTER YOUR EXPERIENCE FIELD"></input>
                             <br />
                             <input type="textarea" onChange={(e => setExperienceValue(e.target.value))} className={(!validate || formdata.experience) ? "" : "redborder"} value={experiencevalue ?? ""} placeholder="ENTER YOUR EXPERIENCE"></input>

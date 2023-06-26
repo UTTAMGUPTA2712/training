@@ -24,6 +24,12 @@ const LoginPage = () => {
             navigate("/otp")
         }
     }
+    const handlenumber=(e)=>{
+        if((phoneNumber?.length)<10){
+            setPhoneNumber(e.target.value)
+        }
+    }
+    console.log("",phoneNumber)
     return (
         <>
             <div id="loghome">
@@ -31,10 +37,10 @@ const LoginPage = () => {
                     <p>PLEASE FILL ALL THE VALUES TO GET OTP</p>
                     <div style={{width:"90%",textAlign:"center"}}>
                     <Select onChange={(value)=>setoption(value)} style={{ width: "10%" }} size="large"   options={options} />{" "}{" "}
-                    <Input type="number"  onChange={(e)=>setPhoneNumber(e.target.value)} size="large" style={{width:"80%"}}   placeholder="large size" suffix={<PhoneOutlined />} />
+                    <Input type="number" maxLength={10} onChange={handlenumber} size="large" style={{width:"80%"}} placeholder="large size" suffix={<PhoneOutlined />} />
                     </div>
                     <br/>
-                    <button disabled={!(option&&(phoneNumber?.length)==1)} onClick={handleclick}>GET OTP</button>
+                    <button disabled={!(option&&(phoneNumber?.length)==10)} onClick={handleclick}>GET OTP</button>
                 </div>
             </div>
         </>

@@ -5,7 +5,7 @@ import "./App.css";
 import store from "./redux/store/store";
 import RouterPage from "./pages/router";
 import Loading from "./component/loading";
-import DownloadPdf from "./component/downloadPdf";
+// import DownloadPdf from "./component/downloadPdf";
 const App = () => {
     let persistor = persistStore(store);
     return (<>

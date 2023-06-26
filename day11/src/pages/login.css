@@ -1,0 +1,71 @@
+
+#login{
+    font-size: 40px;
+    color: #c0c0c0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    backdrop-filter: blur(5px);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+#login h1,h4{
+    margin: 0;
+}
+#login h1{
+    color: rgb(68 217 142 / 77%);
+}
+#login h4{
+
+    font-weight: lighter;
+}
+#home{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/images/wall1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#login button,input{
+    width: 100%;
+    height: 3em;
+    font-size: 0.8em;
+}
+#login input{
+    background-color:#122F30 ;
+    color: #c0c0c0;
+    border: 1px solid #1b4849;
+    padding-left: 0.3em;
+}
+#login p{
+    margin:1em 1em 0.3em 0.2em;
+    font-size: 0.8em;
+    font-weight: 50;
+}
+#login button{
+    border: 1px solid rgb(68 217 142 / 77%);
+    background-color:rgb(68 217 142 / 77%);
+    font-size: 0.8em;
+    color: #0f0f0f;
+    font-weight: 550;
+    margin-bottom: 0.5em;
+}
+#login #google{
+    background-color: #f0f0f0;
+    color: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login #google img{
+    height: 1.5em;
+    margin-right: 0.3em;
+}
+@media screen and (max-width: 2000px){
+    #login{
+        font-size: 30px;
+    }
+}

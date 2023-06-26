@@ -1,0 +1,137 @@
+#homepage {
+    background-color: #111B21;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50px 350px auto;
+    grid-template-rows: 45px auto;
+    font-size: 10px;
+    font-family: inherit;
+}
+
+.borderbars {
+    background-color: #111B21;
+}
+
+.contentdiv {
+    background-color: #222E35;
+}
+
+#users,
+#chat {
+    border: 1px solid #111B21;
+}
+
+#users {
+    border-top-left-radius: 10px;
+}
+
+#search {
+    font-size: 1.1em;
+    border: 1px solid black;
+    border-bottom: 3px solid #1EBEA5;
+    color: #f0f0f0;
+    border-radius: 5px;
+    padding-right: 2px;
+    background-color: #00000000;
+    /* font-weight: bold; */
+    /* font-stretch:expanded; */
+    
+    background-image: url("../src/assets/images/search.png");
+    background-size:2.5em;
+    background-repeat: no-repeat;
+    background-position-x:right ;
+    &&::placeholder{
+        color: #929292;
+    }
+}
+
+input[type=text]:focus {
+    border: 0 solid #929292;
+}
+
+#userlist {
+    margin: 0.8em;
+    overflow-y: auto;
+    height: 82vh;
+}
+
+#usercard {
+    height: 5.5em;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 1em 2em;
+    background-color: #ffffff00;
+    display: flex;
+    align-items: center;
+}
+
+#usercard:hover {
+    background-color: #2c3b44;
+}
+
+#usercard h1,
+h2 {
+    margin: 0;
+    color: #929292;
+    font-weight: 500;
+    font-size: 1.7em;
+}
+
+#usercard h1 {
+    color: whitesmoke;
+}
+
+#usercard img {
+    height: 5em;
+    width: 5em;
+    border-radius: 2.5em;
+    margin-right: 2em;
+    background-color: #1EBEA5;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(124, 124, 124);
+    width: 7px;
+}
+::-webkit-scrollbar:hover {
+    width: 7px;
+}
+#userlisttop{
+    width: 90%;
+    margin:0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #f0f0f0;
+}
+.borderbars img{
+    height: 3em;
+    margin: 1em 0 1em 2em;
+}
+.borderbars h2{
+    color: #f0f0f0;
+    margin-left: 0.5em;
+    margin-top: 0.7em;
+    font-weight: 300;
+}
+#chat{
+    background-image: url("./assets/images/wall2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#userlisttop div{
+    display: flex;
+}
