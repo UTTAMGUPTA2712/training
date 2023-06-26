@@ -15,8 +15,8 @@
 
 .contentdiv {
     background-color: #222E35;
+    position: relative;
 }
-
 #users,
 #chat {
     border: 1px solid #111B21;
@@ -53,7 +53,7 @@ input[type=text]:focus {
 #userlist {
     margin: 0.8em;
     overflow-y: auto;
-    height: 82vh;
+    height: 78vh;
 }
 
 #usercard {
@@ -92,6 +92,7 @@ h2 {
 
 ::-webkit-scrollbar {
     width: 3px;
+    margin-left: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -115,6 +116,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     color: #f0f0f0;
+    position: relative;
 }
 .borderbars img{
     height: 3em;
@@ -131,7 +133,154 @@ h2 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
 }
 #userlisttop div{
     display: flex;
+    align-items: center;
+}
+#userlisttop span{
+    position: absolute;
+    right: 0;
+}
+#userlisttop img{
+    height: 2.5em;
+    padding: 1em;
+    margin-left: 0.2em;
+    border-radius: 10px;
+    &&:hover{
+        background-color: #2c3b44;
+    }
+}
+#chatbox{
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    font-size: 7px;
+    padding:0 1em;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    height: 85vh;
+    align-items: flex-start;
+}
+.userchat{
+    border-radius: 15px;
+    border-top-left-radius:0 ;
+    background-color: #2c3b44;
+    align-self: flex-start;
+}
+.senderchat{
+    border-radius: 15px;
+    border-top-right-radius:0 ;
+    background-color: #075E54;
+    align-self: flex-end;
+}
+.userchat,.senderchat{
+    padding: 1em;
+    color: #f0f0f0;
+    padding-bottom: 1.2em;
+    font-size: 2em;
+    display: block;
+    margin-top: 0.5em;
+    position: relative;
+    max-width: 55%;
+}
+.userchat span{
+    position: absolute;
+    font-size: 0.7em;
+    bottom: 0.5em;
+    right: 0.5em;
+    padding-right: 1em;
+}
+.senderchat span{
+    position: absolute;
+    font-size: 0.7em;
+    bottom: 0.5em;
+    right: 0.5em;
+    padding-right: 1em;
+}
+.senderchat p{
+    margin: 0;
+}
+.userchat p{
+    margin: 0;
+}
+.chatdate{
+    align-self: center;
+    font-size: 1.7em;
+    color: #f0f0f0;
+    padding: 0.5em;
+    background-color: #0e181f;
+    border-radius: 10px;
+    margin-top: 0.5em;
+}
+#typechat{
+    display: flex;
+    width: 100%;
+    background-color: #222E35;
+    align-items: center;
+    height: 4.5em;
+    margin-top: 1em;
+    position: absolute;
+    bottom: 0;
+    bottom: 0;
+    /* max-width: 1000px; */
+}
+#typechat input{
+    font-size: 1.5em;
+    overflow-y: auto;
+    min-height: 2em;
+    background-color: #222E35;
+    padding: 0 1em;
+    border: 0;
+    color: #f0f0f0;
+    &&::placeholder{
+        color: #f0f0f0;
+    }
+}
+#typechat img{
+    height: 2em;    
+    padding: 1em 2em;
+    &&:hover{
+        background-color: #2c3b44;
+    }
+}
+#userdetail{
+    display: flex;
+    width: 100%;
+    height: 6em;
+    background-color: #222E35;
+    align-items: center;
+    justify-content: space-between;
+}
+#userdetail h2{
+    color: #f0f0f0;
+}
+#userdetail img{
+    height: 2.5em;
+    border-radius: 5px;
+    padding: 1em ;
+    &&:hover{
+        background-color: #2c3b44;
+    }
+}
+#userdetail .avatar{
+    height: 5em;
+}
+#side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+#side img{
+    height: 4em;
+    width: 4em;
+    margin: 0;
+    margin: 2em 0;
 }
