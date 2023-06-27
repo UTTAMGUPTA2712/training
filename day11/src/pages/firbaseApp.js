@@ -1,19 +1,14 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { saveUserAuth } from "../redux/reducer/authSlice";
+import { collection, doc, getFirestore } from "firebase/firestore";
 import "./login.css"
-import googleimage from "../assets/images/googleicon.png"
 const firebaseConfig = {
-    apiKey: "AIzaSyBbBIqhM7AiUKBqbCJTbI1hXhzg7s9JcAs",
-    authDomain: "login-project-7effd.firebaseapp.com",
-    projectId: "login-project-7effd",
-    storageBucket: "login-project-7effd.appspot.com",
-    messagingSenderId: "1029877870058",
-    appId: "1:1029877870058:web:08baacb3281c5e21ced693",
-    measurementId: "G-KTZ1172MFN"
+  apiKey: "AIzaSyBFwEUzYf4_Ojr-SYib-uFjfGf1cVwYpXQ",
+  authDomain: "chat-app-cc9fb.firebaseapp.com",
+  projectId: "chat-app-cc9fb",
+  storageBucket: "chat-app-cc9fb.appspot.com",
+  messagingSenderId: "790216418094",
+  appId: "1:790216418094:web:efa8fa711f6691dd7a90bf"
 };
 export const firebaseapp = initializeApp(firebaseConfig);
-const analytics = getAnalytics(firebaseapp);
+export const db=getFirestore(firebaseapp)
+export const usersDoc = doc(collection(db, "users"))

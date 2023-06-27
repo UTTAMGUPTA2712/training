@@ -34,9 +34,6 @@
     border-radius: 5px;
     padding-right: 2px;
     background-color: #00000000;
-    /* font-weight: bold; */
-    /* font-stretch:expanded; */
-    
     background-image: url("../src/assets/images/search.png");
     background-size:2.5em;
     background-repeat: no-repeat;
@@ -53,7 +50,7 @@ input[type=text]:focus {
 #userlist {
     margin: 0.8em;
     overflow-y: auto;
-    height: 78vh;
+    height: 82vh;
 }
 
 #usercard {
@@ -134,7 +131,6 @@ h2 {
     background-position: center;
     background-size: cover;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
 }
@@ -155,15 +151,19 @@ h2 {
         background-color: #2c3b44;
     }
 }
-#chatbox{
+#chatboxcontainer{
     display: flex;
     width: 100%;
+    justify-content: center;
+    overflow-y: auto;
+}
+#chatbox{
+    display: flex;
+    width:100% ;
     max-width: 1000px;
     font-size: 7px;
     padding:0 1em;
     flex-direction: column;
-    justify-content: center;
-    overflow-y: auto;
     height: 85vh;
     align-items: flex-start;
 }
@@ -264,9 +264,6 @@ h2 {
     height: 2.5em;
     border-radius: 5px;
     padding: 1em ;
-    &&:hover{
-        background-color: #2c3b44;
-    }
 }
 #userdetail .avatar{
     height: 5em;
@@ -283,4 +280,24 @@ h2 {
     width: 4em;
     margin: 0;
     margin: 2em 0;
+}
+:where(.css-dev-only-do-not-override-12upa3x).ant-select-single{
+    width: 85%;
+    font-size: 1.1em;
+    border: 1px solid black;
+    border-bottom: 3px solid #1EBEA5;
+    color: #f0f0f0;
+    border-radius: 5px;
+    padding-right: 2px;
+    background-color: #00000000;
+}
+:where(.css-dev-only-do-not-override-12upa3x).ant-select:not(.ant-select-customize-input) .ant-select-selector{
+    background-color: #00000000;
+    border: #0e181f;
+}
+:where(.css-dev-only-do-not-override-12upa3x).ant-select-single .ant-select-selector{
+    color: #f0f0f0;
+}
+:where(.css-dev-only-do-not-override-12upa3x).ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder{
+    color:#929292 ;
 }
