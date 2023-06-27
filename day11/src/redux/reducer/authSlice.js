@@ -10,6 +10,7 @@ export const AuthSlice=createSlice({
     reducers:{
         saveUserAuth:(state,action)=>{
             state.userAuth=action.payload
+            state.chatroomid=null
         },
         logout:(state)=>{
             state.userAuth=null

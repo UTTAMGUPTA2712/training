@@ -55,7 +55,7 @@ const Search = () => {
             }
             options={optiondata}
         />
-        <button onClick={handleStartChat} style={{ backgroundColor: "#2c3b44", color: "#1EBEA5", border: "0" }}>Start</button>
+        <button onClick={handleStartChat} style={{ backgroundColor: "#2c3b44", color: "#1EBEA5", border: "1px solid black"}}>Start</button>
     </>)
 }
 export default Search
