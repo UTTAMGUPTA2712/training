@@ -1,4 +1,5 @@
-# using firebase for login authentication
+# Chat App using firebase deployed version
+# day 12,13 continued
 @reduxjs/toolkit react-redux react-router-dom redux-persist
 # Getting Started with Create React App
 

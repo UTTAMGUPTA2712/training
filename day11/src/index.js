@@ -7,23 +7,6 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
-import HomePage from './pages/homepage';
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBbBIqhM7AiUKBqbCJTbI1hXhzg7s9JcAs",
-//   authDomain: "login-project-7effd.firebaseapp.com",
-//   projectId: "login-project-7effd",
-//   storageBucket: "login-project-7effd.appspot.com",
-//   messagingSenderId: "1029877870058",
-//   appId: "1:1029877870058:web:08baacb3281c5e21ced693",
-//   measurementId: "G-KTZ1172MFN"
-// };
-
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const persistor=new persistStore(store)
@@ -32,7 +15,6 @@ root.render(
     <Provider store={store}>
       <PersistGate persistor={persistor}>
     <App />
-    {/* <HomePage/> */}
     </PersistGate>
     </Provider>
   </React.StrictMode>
