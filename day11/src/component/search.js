@@ -41,6 +41,7 @@ const Search = () => {
         if (uservalue) {
             const chatroomid = (uservalue < (loggeduser.userId)) ? ("" + uservalue + (loggeduser.userId)) : ("" + (loggeduser.userId) + uservalue)
             dispatch(setchatroomid(chatroomid))
+            console.log("handlestart chatroom", chatroomid)
             const chatid = await getDocs(collection(db, "chatRooms"))
             console.log("", chatroomid,chatid)
             const getchatid = chatid?.docs.filter((id) => id.data().chatRoomId == chatroomid)

@@ -6,7 +6,7 @@ import dotsicon from "../assets/images/dotsicon.png"
 import { collection, getDocs, onSnapshot } from "firebase/firestore"
 import { db } from "../pages/firbaseApp"
 import { useEffect, useState } from "react"
-import { setchatroomid } from "../redux/reducer/authSlice"
+import { setchatroomid, setcurchatuser } from "../redux/reducer/authSlice"
 const UserList = () => {
     const [userdata, setuserdata] = useState([])
     const curentChatRoomId = useSelector((state) => state.auth.chatroomid)
@@ -32,8 +32,9 @@ const UserList = () => {
                 const sender = user.data().sender;
                 const receiver = user.data().receiver;
                 const thisuserdata = (receiver.userId == currentuser) ? (sender) : ((sender.userId == currentuser) ? receiver : "no");
+                // const secuserdata = (receiver.userId == currentuser) ? (sender) : ((sender.userId == currentuser) ? receiver : "no");
                 if (thisuserdata != "no") {
-                    return <><div onClick={() => {dispatch(setchatroomid(user.data().chatRoomId));console.log("confirm",user.data().chatRoomId)}}><UserCard data={thisuserdata} curentChatRoomId={curentChatRoomId} /></div></>
+                    return <><div onClick={() => {dispatch(setchatroomid(user.data().chatRoomId));dispatch(setcurchatuser(thisuserdata));console.log("confirm",user.data().chatRoomId)}}><UserCard data={thisuserdata} curentChatRoomId={curentChatRoomId} /></div></>
                 }
             })}
         </div>
