@@ -6,13 +6,12 @@ import googleimage from "../assets/images/googleicon.png";
 import { db, firebaseapp } from "./firbaseApp";
 import "./login.css";
 import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore";
-import { RandomId } from "../component/randomid";
+import { RandomId } from "../utils/randomid";
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth(firebaseapp);
 
 const Login = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState({ userId: RandomId(),chatroom:[],online: true, });

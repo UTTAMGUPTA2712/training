@@ -1,6 +1,3 @@
-import { useDispatch, useSelector } from "react-redux"
-import { logout } from "../redux/reducer/authSlice"
-import Search from "../component/search"
 import UserList from "../component/userlist"
 import whatsappicon from "../assets/images/whatsapp.png"
 import Chats from "../component/chat"

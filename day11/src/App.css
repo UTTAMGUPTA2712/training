@@ -6,7 +6,16 @@
     grid-template-columns: 50px 350px auto;
     grid-template-rows: 45px auto;
     font-size: 10px;
-    font-family: inherit;
+    /* font-family: inherit; */
+    font-family: "Segoe UI"
+    "Helvetica Neue"
+    Helvetica
+    "Lucida Grande"
+    Arial
+    Ubuntu
+    Cantarell
+    "Fira Sans"
+    sans-serif;
 }
 
 .borderbars {
@@ -72,21 +81,29 @@ input[type=text]:focus {
 #usercard h1,
 h2 {
     margin: 0;
+}
+#usercard h2{
     color: #929292;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+#usercard h2 span{
+    color: #1EBEA5;
     font-weight: 500;
-    font-size: 1.7em;
 }
 
 #usercard h1 {
     color: whitesmoke;
+    font-weight: 500;
+    font-size: 1.7em;
 }
 
 #usercard img {
     height: 5em;
     width: 5em;
-    border-radius: 2.5em;
+    border-radius: 4em;
     margin-right: 2em;
-    background-color: #1EBEA5;
+    background-color: #0e181f;
 }
 
 ::-webkit-scrollbar {
@@ -178,7 +195,7 @@ h2 {
     font-size: 7px;
     padding: 0 1em;
     flex-direction: column;
-    height: 85vh;
+    height: 83.5vh;
     align-items: flex-start;
 }
 
@@ -240,7 +257,7 @@ h2 {
 
 .chatdate {
     position: sticky;
-    top: 0;
+    top: 0.5em;
     align-self: center;
     font-size: 1.7em;
     color: #f0f0f0;
@@ -248,6 +265,8 @@ h2 {
     background-color: #0e181f;
     border-radius: 10px;
     margin-top: 0.5em;
+    width: 5em;
+    text-align: center;
 }
 
 #typechat {
@@ -331,7 +350,8 @@ h2 {
     margin-left: 2em;
     width: 5em;
     border-radius: 5em;
-    background-color: #075E54;
+    /* border-color:#00000000 ; */
+    background-color: #0e181f;
 }
 
 #side {
@@ -401,7 +421,8 @@ button:disabled {
 }
 
 .online {
-    border: 3px solid #1ebe3b;
+
+    border:3px solid #1EBEA5;
 }
 
 .offline {
