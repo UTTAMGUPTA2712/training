@@ -71,8 +71,7 @@ export const Signup = () => {
         <>
             <div id="main">
                 {contextHolder}
-
-                <div className="formdiv">
+                <div id="loginnnn" className="formdiv">
                     <Title>
                         Create new account<span className="blue">.</span>
                     </Title>

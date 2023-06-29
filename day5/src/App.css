@@ -44,26 +44,26 @@
   background-attachment: fixed;
   background-size: cover;
 }
-h1:where(.css-dev-only-do-not-override-12jzuas).ant-typography{
+#loginnnn h1.ant-typography{
   margin: 0;
   color: #FFFFFF;
   font-size: 4vh;
 }
-h5:where(.css-dev-only-do-not-override-12jzuas).ant-typography{
+#loginnnn  h5.ant-typography{
   margin: 0;
   color: #C4C4C4;
   font-size: 1.5vh;
 }
-h3:where(.css-dev-only-do-not-override-12jzuas).ant-typography{
+#loginnnn h3.ant-typography{
   margin: 0;
   font-size: 2.5vh;
   color: #9AA5B5;
 }
-:where(.css-dev-only-do-not-override-12jzuas).ant-input{
+#loginnnn .ant-input{
   margin: 0;
   color: aliceblue;
 }
-:where(.css-dev-only-do-not-override-12jzuas).ant-input::placeholder{
+#loginnnn .ant-input::placeholder{
   color: #C4C4C4;
 }
 #main{
