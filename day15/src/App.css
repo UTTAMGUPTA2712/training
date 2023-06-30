@@ -1,0 +1,83 @@
+#Authhome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  & img{
+    height: initial;
+  }
+  font-family: -apple-system
+  BlinkMacSystemFont
+  "Segoe UI"
+  Roboto
+  Helvetica
+  Arial
+  sans-serif;
+}
+#login{
+  margin: 2rem;
+  width: 20rem;
+  border: 1px solid rgb(165, 165, 165);
+  height: max-content;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+  & img{
+    width: 100%;
+  }
+  & input,button{
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  & button{
+    border: 0;
+    background-color: #0095F6;
+    border-radius: 10px;
+    color: #fafafa;
+    font-weight: 700;
+  }
+  & input{
+    padding: 0;
+    border: 1px solid rgb(165, 165, 165);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding-left: 0.8rem;
+    padding-right: -0.8rem;
+    box-sizing:border-box;
+  }
+  & form h4{
+    font-weight: 500;
+  }
+  & h4{
+    font-weight: 400;
+    color: rgb(115, 115, 115);
+  }
+  & p{
+    font-size: 0.8rem;
+  }
+  & span{
+    color: tomato;
+    font-size: 0.9rem;
+  }
+}
+#route{
+  margin: 2rem;
+  margin-top: 1rem;
+  border: 1px solid rgb(165, 165, 165);
+  text-align: center;
+  font-size: 0.9rem;
+  & span{
+    cursor: pointer;
+    font-weight: 700;
+    color: #0095F6;
+  }
+}
+button:disabled{
+  opacity: 0.8;
+  cursor: no-drop ;
+}
+button{
+  cursor: pointer;
+}
