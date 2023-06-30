@@ -1,13 +1,3 @@
-# social media page having folowing using online server Firebase
-## must have comments and clean code no unnecessary code
-- login page
-- signup page
-- chat
-- homepage
-- create posts
-- profile
-- notifications
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

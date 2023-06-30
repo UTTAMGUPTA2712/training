@@ -81,3 +81,39 @@ button:disabled{
 button{
   cursor: pointer;
 }
+#grid{
+  display: grid;
+  grid-template-columns: 20rem auto;
+}
+#SideBar{
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  & h2{
+    margin: 1rem 0;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  & div{
+    display: flex;
+    cursor: pointer;
+    /* border: 1px solid ; */
+    /* border-style: none none solid none; */
+  }
+  & div:hover{
+    background-color: #f9f9f9;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  & img{
+    margin:1rem 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+} 
