@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialValue={
     authDetail:null,
-
+    currentChatRoom:null,
+    secondUser:null
 }
 export const authSlice=createSlice({
     name:"auth",
@@ -14,7 +15,13 @@ export const authSlice=createSlice({
         logout:(state)=>{
             state.authDetail=null
         },
+        saveCurrentChatRoom:(state,action)=>{
+            state.currentChatRoom=action.payload
+        },
+        saveSecondUser:(state,action)=>{
+            state.secondUser=action.payload
+        }
     }
 })
-export const {saveAuthDetail,logout}=authSlice.actions
+export const {saveAuthDetail,logout,saveCurrentChatRoom,saveSecondUser}=authSlice.actions
 export default authSlice.reducer

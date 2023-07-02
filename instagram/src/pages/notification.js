@@ -1,12 +1,12 @@
 import Sidebar from "../component/sidebar"
 
-const Notifications=()=>{
+const Notifications = () => {
     return (
         <>
-        
-    <div id="grid">
-        <Sidebar/>
-        </div>
+
+            <div id="grid">
+                <Sidebar />
+            </div>
         </>
     )
 }

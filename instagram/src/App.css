@@ -1,21 +1,19 @@
-#Authhome{
+#Authhome {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  & img{
+
+  & img {
     height: initial;
   }
-  font-family: -apple-system
-  BlinkMacSystemFont
-  "Segoe UI"
-  Roboto
-  Helvetica
-  Arial
-  sans-serif;
+
+  font-family: -apple-system BlinkMacSystemFont "Segoe UI"
+  Roboto Helvetica Arial sans-serif;
 }
-#login{
+
+#login {
   margin: 2rem;
   width: 20rem;
   border: 1px solid rgb(165, 165, 165);
@@ -23,71 +21,88 @@
   padding: 2rem;
   box-sizing: border-box;
   text-align: center;
-  & img{
+
+  & img {
     width: 100%;
   }
-  & input,button{
+
+  & input,
+  button {
     height: 2.5rem;
     margin-top: 0.5rem;
     width: 100%;
   }
-  & button{
+
+  & button {
     border: 0;
     background-color: #0095F6;
     border-radius: 10px;
     color: #fafafa;
     font-weight: 700;
   }
-  & input{
+
+  & input {
     padding: 0;
     border: 1px solid rgb(165, 165, 165);
     border-radius: 5px;
     background-color: #f9f9f9;
     padding-left: 0.8rem;
     padding-right: -0.8rem;
-    box-sizing:border-box;
+    box-sizing: border-box;
   }
-  & form h4{
+
+  & form h4 {
     font-weight: 500;
   }
-  & h4{
+
+  & h4 {
     font-weight: 400;
     color: rgb(115, 115, 115);
   }
-  & p{
+
+  & p {
     font-size: 0.8rem;
   }
-  & span{
+
+  & span {
     color: tomato;
     font-size: 0.9rem;
   }
 }
-#route{
+
+#route {
   margin: 2rem;
   margin-top: 1rem;
   border: 1px solid rgb(165, 165, 165);
   text-align: center;
   font-size: 0.9rem;
-  & span{
+
+  & span {
     cursor: pointer;
     font-weight: 700;
     color: #0095F6;
   }
 }
-button:disabled{
+
+button:disabled {
   opacity: 0.8;
-  cursor: no-drop ;
+  cursor: no-drop;
 }
-button{
+
+button {
   cursor: pointer;
 }
-#grid{
+
+#grid {
   display: grid;
+  justify-items: center;
   grid-template-columns: 20rem auto;
 }
-#SideBar{
+
+#SideBar {
   position: sticky;
   display: flex;
+  width: 18rem;
   flex-direction: column;
   justify-content: space-between;
   top: 0;
@@ -95,25 +110,241 @@ button{
   padding-left: 1rem;
   padding-right: 1rem;
   height: 100vh;
+  /* width: 100%; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  & h2{
+
+  & h2 {
     margin: 1rem 0;
     font-weight: 600;
     font-size: 1rem;
   }
-  & div{
+
+  & div {
     display: flex;
     cursor: pointer;
     /* border: 1px solid ; */
     /* border-style: none none solid none; */
   }
-  & div:hover{
+
+  & div:hover {
     background-color: #f9f9f9;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
-  & img{
-    margin:1rem 1rem;
+  & img {
+    margin: 1rem 1rem;
     width: 1.5rem;
     height: 1.5rem;
   }
-} 
+}
+#post {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem;
+  width: 30rem;
+  border-radius: 5px;
+
+  & div {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 30rem;
+    height: 30rem;
+    background-color: #0f0f0f;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  & p {
+    max-width: 100%;
+    word-break: break-all;
+  }
+}
+
+#chat {
+  display: grid;
+  grid-template-columns: 20rem auto;
+  width: 100%;
+  & #users {
+    border: 1px solid grey;
+    display: grid;
+    grid-template-rows: 5rem auto;
+    & #userList {
+      width: 100%;
+      border: 1px solid grey;
+      border-style:none none solid none ;
+      & select{
+        margin: 0.5rem 0 0.5rem 0.5rem;
+        width: 70%;
+        height: 2rem;
+      }
+      & button{
+        height: 2rem;
+        font-weight: 700;
+      }
+      & div{
+        margin: 0.5rem;
+        font-weight: 700;
+      }
+    }
+    & #chatList {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      
+      & #chatlistCard {
+        display: flex;
+        overflow-x: hidden;
+        margin: 0.25rem;
+        height: 4.5rem;
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding-right: 0.5rem;
+        align-items: center;
+        
+        &&:hover{
+          background-color: #f0f0f0;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        & h2,p{
+          margin: 0.5rem;
+          padding: 0;
+        }
+        & h2{
+          font-weight: 400;
+          font-size: 1.1rem;
+        }
+        & p{
+          font-size: 0.8rem;
+          color: grey;
+        }
+        & img {
+          height: 3.5rem;
+          width: 3.5rem;
+          margin-right: 0.5rem;
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
+  & #chatRoom {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 5rem auto 5rem;
+    & #chatDetail {
+      display: grid;
+      border: 1px solid grey;
+      border-style: none none solid none;
+      width: 100%;
+      grid-template-columns: 5rem auto 4rem;
+      align-items: center;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      & img {
+        justify-self: center;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 2rem;
+      }
+      & h2{
+        align-self: flex-start;
+        font-weight: 400;
+      }
+    }
+
+    & #chatmessage {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      & .chatdate {
+        position: sticky;
+        top: 0.5rem;
+        background-color: #0f0f0f;
+        width: 6rem;
+        text-align: center;
+        height: 1.5rem;
+        border-radius: 15px;
+        color: #f0f0f0;
+        align-self: center;
+      }
+      & .senderchat {
+        align-self: flex-end;
+        background-color: rgb(55, 151, 240);
+        border-radius:25px 25px  5px 25px ;
+        color: white;
+      }
+      & .recieverchat {
+        align-items: flex-start;
+        background-color: rgb(239, 239, 239);
+        border-radius:25px 25px 25px  5px;
+      }
+
+      & .senderchat,
+      .recieverchat {
+        padding: 0.5rem;
+        /* color: #f0f0f0; */
+        padding-bottom: 1.2rem;
+        font-size: 1rem;
+        display: block;
+        
+        margin: 0.25rem 1rem;
+        position: relative;
+        max-width: 55%;
+        min-width: 6rem;
+        word-wrap: break-word;
+        & span {
+          position: absolute;
+          font-size: 0.7rem;
+          bottom: 0.5rem;
+          right: 0.5rem;
+          padding-right: 1rem;
+          color: rgb(244, 231, 231);
+        }
+        & div {
+          margin: 0;
+          /* max-width: 100%; */
+        }
+      }
+    }
+
+    & #textSender {
+      width: calc(100%-2rem);
+      margin: 1rem;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      border-radius: 25px;
+    }
+  }
+}
+
+
+
+
+.react-emoji {
+  flex-direction: row-reverse;
+  align-self: flex-start;
+  width: auto;
+  max-height: 4em;
+  align-items: center;
+  /* margin: 1rem; */
+  border-radius: 25px;
+  border: 1px solid black;
+}
+.react-input-emoji--container {
+  overflow-y: auto;
+  overflow-x: auto;
+  background-color: #00000000 !important;
+  /* color: #f0f0f0 !important; */
+  border: 0 !important;
+  max-height: 2.7em;
+  padding-right: 1em;
+}
+
+.react-input-emoji--input {
+  max-width: 100%;
+}
+
+.react-input-emoji--wrapper {
+  display: grid !important;
+}

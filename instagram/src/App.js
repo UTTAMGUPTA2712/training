@@ -5,7 +5,7 @@ import SignUp from './pages/signup';
 import HomePage from './pages/homepage';
 import Messages from './pages/messages';
 import Notifications from './pages/notification';
-import CreatePost from './pages/createpost';
+// import CreatePost from './pages/createpost';
 import Profile from './pages/profile';
 import { useSelector } from 'react-redux';
 
@@ -33,15 +33,14 @@ function App() {
     {
       path:"/Notification",
       component:<Notifications/>,
-    },{
-      path:"/create",
-      component:<CreatePost/>,
+    // },{
+    //   path:"/create",
+    //   component:<CreatePost/>,
     },{
       path:"/profile",
       component:<Profile/>,
     }
   ]
-  console.log("",userDetail)
   return (
     <>
     <BrowserRouter>

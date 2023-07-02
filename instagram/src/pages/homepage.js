@@ -1,13 +1,14 @@
+import Posts from "../component/posts"
 import Sidebar from "../component/sidebar"
 
-const HomePage=()=>{
-    return(<>
-        
-    <div id="grid">
-        <Sidebar/>
-        <div>
-            
-        </div>
+const HomePage = () => {
+    return (<>
+
+        <div id="grid">
+            <Sidebar />
+            <div>
+                <Posts />
+            </div>
         </div>
     </>)
 }

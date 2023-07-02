@@ -5,19 +5,19 @@ import { useSelector } from 'react-redux'
 
 const Comment = ({ data }) => {
     const [comments, setComments] = useState([])
-    const user=useSelector((state)=>state.auth.authDetail)
+    const user = useSelector((state) => state.auth.authDetail)
     useEffect(() => {
         const data = onSnapshot(doc(db, "Posts", data), (snapshot) => {
             setComments(snapshot.comment)
         })
         return () => data()
     }, [])
-    const AddComment=()=>{
-        
+    const AddComment = () => {
+
     }
     return (
         <div>{
-            comments.map((comment) => {
+            comments?.map((comment) => {
                 return <div>working</div>
             })
         }</div>

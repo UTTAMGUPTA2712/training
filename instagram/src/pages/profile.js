@@ -18,7 +18,7 @@ const Profile = () => {
         <>
             <div id="grid">
                 <Sidebar />
-                <div>
+                <div >
                     <img src={userData.photo} />
                     <h1>{userData.username}</h1>
                     <h3>{userData.email}</h3>

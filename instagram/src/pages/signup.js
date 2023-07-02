@@ -1,9 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import phoneimage from "../assets/images/phoneimage.png"
 import { useState } from "react"
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { db, firebaseApp } from "../utils/firebase";
-import { collection, getDocs } from "firebase/firestore";
 import { CheckUsers } from "../utils/checkUsers";
 import { AddUser } from "../utils/adduser";
 import { saveAuthDetail } from "../reducer/authslice";
@@ -13,15 +10,14 @@ import { useNavigate } from "react-router-dom";
 const SignUp = () => {
     const [user, setUser] = useState({ photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknnc4OqRgNtBh8jwv-wY4dpK-YZ8AHDMktRa85N4YD2wp-zhQvYavkyKPtCZtC48DLrw&usqp=CAU" })
     const theme = useSelector((state) => state.theme.theme)
-    const provider = new GoogleAuthProvider();
-    const auth = getAuth(firebaseApp);
     const [valid, setValid] = useState(false)
     const dispatch = useDispatch()
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const SignUpWIthGoogle = async (e) => {
         e.preventDefault()
         const data = await Google()
         dispatch(saveAuthDetail(data))
+        navigate("/")
     }
     const saveUser = (title, value) => {
         setUser((p) => { return { ...p, [title]: value } })
@@ -39,7 +35,7 @@ const SignUp = () => {
     return (
         <>
             <div id="Authhome">
-                <div style={{ display: "flex",alignItems: "center"}}>
+                <div style={{ display: "flex", alignItems: "center" }}>
                     <img src={phoneimage} />
                     <div>
                         <div id="login">
@@ -54,12 +50,12 @@ const SignUp = () => {
                                 <p>
                                     People who use our service may have uploaded your contact information to Instagram. Learn More</p><p>By signing up, you agree to our Terms , Privacy Policy and Cookies Policy .
                                 </p>
-                                <button disabled={!(user?.username&&user.email&&user.password)} onClick={ManualSignUp}>Sign up</button>
+                                <button disabled={!(user?.username && user.email && user.password)} onClick={ManualSignUp}>Sign up</button>
                                 {valid && <span>User Already Exist</span>}
                             </form>
                         </div>
                         <div id="route">
-                            <p>Have an account? <span onClick={()=>navigate("/")}>Log in</span></p>
+                            <p>Have an account? <span onClick={() => navigate("/")}>Log in</span></p>
                         </div>
                     </div>
                 </div>

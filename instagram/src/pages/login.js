@@ -15,7 +15,7 @@ const Login = () => {
     const theme = useSelector((state) => state.theme.theme)
     const [valid, setValid] = useState(false)
     const dispatch = useDispatch()
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const LoginWIthGoogle = async () => {
         const data = await Google()
         dispatch(saveAuthDetail(data))
@@ -25,7 +25,7 @@ const Login = () => {
         if (userData === "") {
             setValid(true)
         } else {
-            await updateDoc(doc(db,"Users",userData?.[0].data().userId),{online:true})
+            await updateDoc(doc(db, "Users", userData?.[0].data().userId), { online: true })
             dispatch(saveAuthDetail(userData?.[0].data()))
         }
     }
@@ -46,7 +46,7 @@ const Login = () => {
                             {valid && <span>User doesnot exist(Email or Password incorrect)</span>}
                         </div>
                         <div id="route">
-                            <p>Don't have an account? <span onClick={()=>navigate("/signup")}>Sign up</span></p>
+                            <p>Don't have an account? <span onClick={() => navigate("/signup")}>Sign up</span></p>
                         </div>
                     </div>
                 </div>
