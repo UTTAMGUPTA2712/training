@@ -1,3 +1,9 @@
+# make social media in which we can post and chat with people
+## deploy link
+[click here](https://instagram-52bd7.web.app)
+or copy paste this in url
+https://instagram-52bd7.web.app
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

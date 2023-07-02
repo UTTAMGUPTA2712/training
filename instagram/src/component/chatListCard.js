@@ -12,7 +12,7 @@ const ChatListCard = ({ data, chatroom }) => {
             setUserDetail(snapshot?.data())
         })
         return ()=>getUser()
-    }, [])
+    }, [data])
     const handleClick=()=>{
         dispatch(saveCurrentChatRoom(chatroom.chatRoomId))
         dispatch(saveSecondUser(userDetail))
@@ -20,7 +20,7 @@ const ChatListCard = ({ data, chatroom }) => {
     return (
         <>
             <div id='chatlistCard' onClick={handleClick}>
-                <img src={userDetail.photo} />
+                <img className={userDetail.online?"online":"offline"} src={userDetail.photo} alt='user'/>
                 <div>
                     <h2>{userDetail.username}</h2>
                     <p>{(userDetail.typing?.[chatroom.chatRoomId]) ? "Typing..." : (chatroom.latest)}</p>

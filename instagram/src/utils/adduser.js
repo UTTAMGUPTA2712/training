@@ -1,9 +1,8 @@
 import { doc, setDoc } from "firebase/firestore"
-// import { RandomID } from "./randonId"
 import { db } from "./firebase"
 import uniqid from 'uniqid';
 export const AddUser=async(data)=>{
-    const id=uniqid.process()
+    const id=uniqid()
     const userid=id.toString()  
     const newData={...data,userId:userid,notifications:[]}
     console.log("here",newData, userid)

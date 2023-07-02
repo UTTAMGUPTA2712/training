@@ -1,7 +1,6 @@
 import { collection, doc, getDoc, onSnapshot, setDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { db } from '../utils/firebase'
-// import { logDOM } from '@testing-library/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { saveCurrentChatRoom, saveSecondUser } from '../reducer/authslice'
 
@@ -13,14 +12,14 @@ const UserList = () => {
     useEffect(() => {
         const getuser = onSnapshot(collection(db, "Users"), (snapshot) => {
             const gotuser = snapshot?.docs.map((user => user.data()))
-            setUserList(gotuser)
+            const neededdata=gotuser.filter(user=>user.userId!==currentuser)
+            setUserList(neededdata)
         })
         return () => getuser()
     }, [])
     const handleChat = async () => {
         const roomId = (currentuser < choice) ? (currentuser + choice) : (choice + currentuser)
         const duplicate = await getDoc(doc(db, "ChatRoom", roomId))
-        console.log("", duplicate.exists,duplicate)
         if (!(duplicate.exists())) {
             await setDoc(doc(db, "ChatRooms", roomId), {
                 chatRoomId: roomId,
@@ -37,6 +36,7 @@ const UserList = () => {
         <>
             <div id='userList'>
                 <select onChange={(e) => {setChoice(e.target.value) }} id="userlist">
+                <option value="">Select User</option>
                     {userList?.map((user) => { return <option value={user.userId}>{user.username}</option> })}
                 </select>
                 <button disabled={!choice} onClick={handleChat}>Start Chat</button>

@@ -1,6 +1,6 @@
-import { arrayUnion, doc, serverTimestamp, updateDoc } from "firebase/firestore";
+import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { useState } from "react";
-import InputEmoji, { async } from "react-input-emoji";
+import InputEmoji from "react-input-emoji";
 import { db } from "../utils/firebase";
 import { useSelector } from "react-redux";
 
@@ -29,8 +29,8 @@ const SendText = () => {
       await updateDoc(doc(db, "Users", currentUser), {
         typing: { [currentChatRoom]: true }
       })
-      clearTimeout(clear)
       let clear;
+      clearTimeout(clear)
       clear = setTimeout(async () => {
         await updateDoc(doc(db, "Users", currentUser), {
           typing: { [currentChatRoom]: false }

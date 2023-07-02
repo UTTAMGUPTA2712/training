@@ -1,26 +1,68 @@
-import { doc, onSnapshot } from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
+import React, { useState } from 'react'
 import { db } from '../utils/firebase'
 import { useSelector } from 'react-redux'
+import commenticon from "../assets/images/comment.png"
+import { Modal } from 'antd';
+import InputEmoji from "react-input-emoji";
 
-const Comment = ({ data }) => {
-    const [comments, setComments] = useState([])
-    const user = useSelector((state) => state.auth.authDetail)
-    useEffect(() => {
-        const data = onSnapshot(doc(db, "Posts", data), (snapshot) => {
-            setComments(snapshot.comment)
+const Comment = ({ comments, id, sender }) => {
+    const [userComment, setUserComment] = useState("")
+    const [open, setOpen] = useState(false);
+    const currentUser = useSelector((state) => state.auth.authDetail)
+    const showModal = () => {
+        setOpen(true);
+    };
+    const handleOk = () => {
+        setOpen(false);
+    };
+    const handleCancel = () => {
+        setOpen(false);
+    };
+    const AddComment = async () => {
+        await updateDoc(doc(db, "Posts", id), {
+            comment: arrayUnion({
+                user: currentUser.username,
+                detail: userComment,
+            })
         })
-        return () => data()
-    }, [])
-    const AddComment = () => {
-
+        setUserComment("")
+        const notificationData = {
+            detail: `${currentUser.username} commented ${userComment} on your post with PostId ${id}`,
+            time: (new Date()).toUTCString()
+        }
+        await updateDoc(doc(db, "Users", sender), {
+            notifications: arrayUnion(notificationData)
+        })
     }
     return (
-        <div>{
-            comments?.map((comment) => {
-                return <div>working</div>
-            })
-        }</div>
+        <>
+            <Modal
+                open={open}
+                title="COMMENTS"
+                onOk={handleOk}
+                onCancel={handleCancel}
+                width={"30rem"}
+                footer={[]}>
+                <div id='comments'>{
+                    comments?.map((comment) => {
+                        return <div>
+                            <p><span>{comment.user}</span> {comment.detail}</p>
+                        </div>
+                    })
+                }</div>
+                <div id="textSender">
+                    <InputEmoji
+                        value={userComment}
+                        onChange={setUserComment}
+                        cleanOnEnter
+                        onEnter={AddComment}
+                        placeholder="Type a message"
+                    />
+                </div>
+            </Modal>
+            <img onClick={showModal} src={commenticon} alt='Comment Icon' />
+        </>
     )
 }
 

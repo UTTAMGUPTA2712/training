@@ -1,18 +1,16 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import phoneimage from "../assets/images/phoneimage.png"
 import { useState } from "react"
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { db, firebaseApp } from "../utils/firebase";
-import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
+import { db } from "../utils/firebase";
+import {  doc, updateDoc } from "firebase/firestore";
 import { CheckUsers } from "../utils/checkUsers";
 import { saveAuthDetail } from "../reducer/authslice";
 import { Google } from "../utils/google";
 import { useNavigate } from "react-router-dom";
-
+import logo from "../assets/images/logoblack.png"
 const Login = () => {
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
-    const theme = useSelector((state) => state.theme.theme)
     const [valid, setValid] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -33,10 +31,10 @@ const Login = () => {
         <>
             <div id="Authhome">
                 <div style={{ display: "-webkit-inline-box" }}>
-                    <img src={phoneimage} />
+                    <img src={phoneimage} alt="phone image"/>
                     <div>
                         <div id="login">
-                            <img src={theme.logo} />
+                            <img src={logo} alt="logo"/>
                             <br /><br />
                             <input value={Email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                             <input value={Password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />

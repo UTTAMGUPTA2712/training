@@ -1,33 +1,110 @@
-import { getDownloadURL, ref } from 'firebase/storage'
-import React, { useEffect, useState } from 'react'
-import { db, firebaseStorage } from '../utils/firebase'
-import { doc, getDoc, onSnapshot } from 'firebase/firestore'
+import { getDownloadURL, ref, getMetadata } from 'firebase/storage';
+import React, { useEffect, useState } from 'react';
+import { db, firebaseStorage } from '../utils/firebase';
+import { arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import likedicon from "../assets/images/liked.png";
+import unlikedicon from "../assets/images/unliked.png";
+import Comment from './comment';
 
 const PostCard = ({ data }) => {
-    const postref = ref(firebaseStorage, data.path)
-    const [url, setUrl] = useState("")
-    const [user, setuser] = useState("")
-    useEffect(() => {
-        const geturl = async () => {
-            const gotdata = await getDownloadURL(postref)
-            setUrl(gotdata)
-            const snap = await getDoc(doc(db, "Users", data.sender))
-            setuser(snap.data())
-        }
-        geturl()
+  const postref = ref(firebaseStorage, data.path);
+  const [url, setUrl] = useState("");
+  const [user, setUser] = useState("");
+  const [liked, setLike] = useState();
+  const [videoMetadata, setVideoMetadata] = useState(null);
+  const [isNewPost, setIsNewPost] = useState(false); 
+  const currentUser = useSelector(state => state.auth.authDetail);
+  const navigate = useNavigate();
 
-    }, [])
-    console.log("user", user)
-    return (
-        <>
-            <div id='post'>
-                <span><img src={user?.photo} />{user?.username}</span>
-                <div style={{ backgroundImage: "url(" + url + ")" }}></div>
-                <button>❤️ {data?.likes?.length}</button><button>Comment {data?.likes?.length}</button>
-                <p>{data.description}</p><span>{console.log((data?.time))}</span>
-            </div>
-        </>
-    )
-}
+  useEffect(() => {
+    const getVideoData = async () => {
+      const downloadURL = await getDownloadURL(postref);
+      setUrl(downloadURL);
 
-export default PostCard
+      const metadata = await getMetadata(postref);
+      setVideoMetadata(metadata);
+
+      const userSnapshot = await getDoc(doc(db, "Users", data.sender));
+      setUser(userSnapshot.data());
+    };
+
+    getVideoData();
+
+    const duplicate = data?.likes?.filter(like => like === currentUser?.userId);
+    if (duplicate?.length > 0) {
+      setLike(true);
+    } else {
+      setLike(false);
+    }
+
+    const postTime = data?.time?.toDate();
+    const currentTime = new Date();
+    const timeDifference = Math.abs(currentTime - postTime);
+    const minutesDifference = Math.floor(timeDifference / (1000 * 60));
+
+    if (minutesDifference <= 5) {
+      setIsNewPost(true);
+    } else {
+      setIsNewPost(false);
+    }
+  }, []);
+
+  const handleCheckuser = () => {
+    navigate("/userDetail", { state: user });
+  };
+
+
+  const handleLike = async () => {
+    if (liked) {
+      setLike(false);
+      await updateDoc(doc(db, "Posts", data.postId), {
+        likes: data.likes.filter(like => like !== currentUser?.userId)
+      });
+    } else {
+      setLike(true);
+      const notificationData = {
+        detail: `${currentUser.username} liked your post with PostId ${data.postId}`,
+        time: new Date().toUTCString()
+      };
+      await updateDoc(doc(db, "Posts", data.postId), {
+        likes: arrayUnion(currentUser?.userId)
+      });
+      await updateDoc(doc(db, "Users", data.sender), {
+        notifications: arrayUnion(notificationData)
+      });
+    }
+  };
+  const isVideo = videoMetadata && videoMetadata.contentType.startsWith("video/");
+
+  return (
+    <>
+      <div id='post'>
+      {isNewPost && <span className="newposttag">New</span>} 
+        <span>
+          <img src={user?.photo} alt='user' />
+          <h2 className='pointer' onClick={handleCheckuser}>
+            {user?.username}
+          </h2>
+        </span>
+        {isVideo ? (
+            <div>
+          <video id='video' controls>
+            <source src={url} type={videoMetadata.contentType} />
+            Your browser does not support the video tag.
+          </video></div>
+        ) : (
+          <div style={{ backgroundImage: "url(" + url + ")" }}></div>
+        )}
+        <img onClick={handleLike} src={liked ? likedicon : unlikedicon} alt='like button' />
+        <Comment comments={data.comment} id={data.postId} sender={data.sender} />
+        <span>{data?.likes?.length} Likes</span>
+        <p>{data.description}</p>
+        <span className='time'>{data?.time?.toDate().toString()}</span>
+      </div>
+    </>
+  );
+};
+
+export default PostCard;

@@ -1,15 +1,16 @@
 import homeicon from "../assets/images/home.png"
 import chaticon from "../assets/images/chats.png"
 import noticon from "../assets/images/notification.png"
-import createicon from "../assets/images/create.png"
 import logo from "../assets/images/logoblack.png"
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom"
 import logouticon from "../assets/images/logout.png"
-import { logout } from "../reducer/authslice"
+import { cleanChatRoom, logout } from "../reducer/authslice"
 import CreatePost from "./createPost"
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../utils/firebase";
 const Sidebar = () => {
-  const userpic = useSelector((state) => state.auth.authDetail?.photo)
+  const user = useSelector((state) => state.auth.authDetail)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const sidebardata = [
@@ -27,30 +28,27 @@ const Sidebar = () => {
       path: "/Notification",
       pic: noticon,
       title: "Notifications",
-    }, {
-      path: "/create",
-      pic: createicon,
-      title: "Create",
-    }, {
-      path: "/profile",
-      pic: userpic,
-      title: "Profile",
     }
   ]
-  const handleLogout = () => {
+  const handleLogout = async() => {
+    await updateDoc(doc(db,"Users",user?.userId),{
+      online:false,
+    })
     navigate("/")
     dispatch(logout())
+    dispatch(cleanChatRoom())
   }
   return (<>
     <div id="SideBar">
-      <img id="logo" style={{ width: "15rem", height: "4rem" }} src={logo} />
+      <img id="logo" style={{ width: "15rem", height: "4rem" }} src={logo} alt="logo" />
       <span style={{ flexDirection: "column" }}>
         {sidebardata?.map((item) => {
-          return <div onClick={() => navigate(item.path)}><img src={item.pic} /><h2>{item.title}</h2> </div>
+          return <div onClick={() => { navigate(item.path); dispatch(cleanChatRoom()) }}><img src={item.pic} alt={item.title} /><h2>{item.title}</h2> </div>
         })}
+        <CreatePost />
+        <div onClick={() => { navigate("/profile"); dispatch(cleanChatRoom()) }}><img style={{ borderRadius: "25px" }} src={user?.photo} alt="user" /><h2>Profile</h2> </div>
       </span>
-      <div onClick={handleLogout}><img src={logouticon} /><h2>Logout</h2> </div>
-      <CreatePost />
+      <div onClick={handleLogout}><img src={logouticon} alt="logout icon" /><h2>Logout</h2> </div>
     </div>
   </>)
 };

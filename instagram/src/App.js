@@ -5,9 +5,9 @@ import SignUp from './pages/signup';
 import HomePage from './pages/homepage';
 import Messages from './pages/messages';
 import Notifications from './pages/notification';
-// import CreatePost from './pages/createpost';
 import Profile from './pages/profile';
 import { useSelector } from 'react-redux';
+import UserDetail from './component/userdetail';
 
 function App() {
   const userDetail=useSelector(state=>state.auth.authDetail)
@@ -33,9 +33,9 @@ function App() {
     {
       path:"/Notification",
       component:<Notifications/>,
-    // },{
-    //   path:"/create",
-    //   component:<CreatePost/>,
+    },{
+      path:"/userDetail",
+      component:<UserDetail/>,
     },{
       path:"/profile",
       component:<Profile/>,

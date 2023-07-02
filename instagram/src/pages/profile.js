@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import Sidebar from "../component/sidebar"
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../utils/firebase"
 import { useSelector } from "react-redux"
+import UserDetail from "../component/userdetail"
 
 const Profile = () => {
     const userid = useSelector((state) => state.auth.authDetail.userId)
@@ -16,14 +16,7 @@ const Profile = () => {
     }, [])
     return (
         <>
-            <div id="grid">
-                <Sidebar />
-                <div >
-                    <img src={userData.photo} />
-                    <h1>{userData.username}</h1>
-                    <h3>{userData.email}</h3>
-                </div>
-            </div>
+        <UserDetail userData={userData} />
         </>
     )
 }

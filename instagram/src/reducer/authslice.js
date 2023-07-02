@@ -20,8 +20,12 @@ export const authSlice=createSlice({
         },
         saveSecondUser:(state,action)=>{
             state.secondUser=action.payload
+        },
+        cleanChatRoom:(state)=>{
+            state.currentChatRoom=null
+            state.secondUser=null
         }
     }
 })
-export const {saveAuthDetail,logout,saveCurrentChatRoom,saveSecondUser}=authSlice.actions
+export const {saveAuthDetail,logout,saveCurrentChatRoom,saveSecondUser,cleanChatRoom}=authSlice.actions
 export default authSlice.reducer

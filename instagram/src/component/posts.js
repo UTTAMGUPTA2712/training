@@ -1,20 +1,24 @@
-import { collection, doc, onSnapshot } from "firebase/firestore"
+import { collection, onSnapshot } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { db } from "../utils/firebase"
 import PostCard from "./postCard"
 
-const Posts = ({ user }) => {
+const Posts = ({ user = "" }) => {
     const [post, setPost] = useState(null)
     useEffect(() => {
         const getPost = onSnapshot(collection(db, "Posts"), (snapshot) => {
             const data = snapshot?.docs.map(doc => doc.data())
-            setPost(data)
+            const neededdata=data.reverse()
+            setPost(neededdata)
         })
         return () => getPost()
     }, [])
+    console.log("",post)
     return (<>
         {post?.map((data) => {
-            return <PostCard data={data} />
+            if (user === "" || user === data.sender) {
+                return <PostCard data={data} />
+            }
         })}
     </>)
 }

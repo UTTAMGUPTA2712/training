@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import phoneimage from "../assets/images/phoneimage.png"
 import { useState } from "react"
 import { CheckUsers } from "../utils/checkUsers";
@@ -6,10 +6,10 @@ import { AddUser } from "../utils/adduser";
 import { saveAuthDetail } from "../reducer/authslice";
 import { Google } from "../utils/google";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/images/logoblack.png"
 
 const SignUp = () => {
-    const [user, setUser] = useState({ photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknnc4OqRgNtBh8jwv-wY4dpK-YZ8AHDMktRa85N4YD2wp-zhQvYavkyKPtCZtC48DLrw&usqp=CAU" })
-    const theme = useSelector((state) => state.theme.theme)
+    const [user, setUser] = useState({ photo: "https://img.icons8.com/?size=512&id=83190&format=png" })
     const [valid, setValid] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -28,6 +28,7 @@ const SignUp = () => {
         if (userData === "") {
             const data = await AddUser(user)
             dispatch(saveAuthDetail(data))
+            navigate("/")
         } else {
             setValid(true)
         }
@@ -36,10 +37,10 @@ const SignUp = () => {
         <>
             <div id="Authhome">
                 <div style={{ display: "flex", alignItems: "center" }}>
-                    <img src={phoneimage} />
+                    <img src={phoneimage} alt="phone"/>
                     <div>
                         <div id="login">
-                            <img src={theme.logo} />
+                            <img src={logo} alt="logo"/>
                             <h4>Sign up to see photos and videos from your friends.</h4>
                             <form action="/">
                                 <button onClick={SignUpWIthGoogle}>Signup With Google</button>
