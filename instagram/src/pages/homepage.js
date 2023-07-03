@@ -7,6 +7,7 @@ const HomePage = () => {
         <div id="grid">
             <Sidebar />
             <div>
+                {/* showing post */}
                 <Posts />
             </div>
         </div>

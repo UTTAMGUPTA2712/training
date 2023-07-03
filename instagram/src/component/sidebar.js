@@ -4,15 +4,16 @@ import noticon from "../assets/images/notification.png"
 import logo from "../assets/images/logoblack.png"
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom"
-import logouticon from "../assets/images/logout.png"
-import { cleanChatRoom, logout } from "../reducer/authslice"
+import { cleanChatRoom } from "../reducer/authslice"
 import CreatePost from "./createPost"
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../utils/firebase";
+import Logout from "./logout";
+// to navigate through all the set up routers
 const Sidebar = () => {
+  //  getting current user detail
   const user = useSelector((state) => state.auth.authDetail)
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  // navigation list for sidebar that has to be shown at left
   const sidebardata = [
     {
       path: "/",
@@ -30,25 +31,22 @@ const Sidebar = () => {
       title: "Notifications",
     }
   ]
-  const handleLogout = async() => {
-    await updateDoc(doc(db,"Users",user?.userId),{
-      online:false,
-    })
-    navigate("/")
-    dispatch(logout())
-    dispatch(cleanChatRoom())
-  }
+
   return (<>
     <div id="SideBar">
       <img id="logo" style={{ width: "15rem", height: "4rem" }} src={logo} alt="logo" />
       <span style={{ flexDirection: "column" }}>
         {sidebardata?.map((item) => {
+          // clean chatrrom detail and navigating to differnet component 
           return <div onClick={() => { navigate(item.path); dispatch(cleanChatRoom()) }}><img src={item.pic} alt={item.title} /><h2>{item.title}</h2> </div>
         })}
+        {/* to handle create post */}
         <CreatePost />
+        {/* profile button */}
         <div onClick={() => { navigate("/profile"); dispatch(cleanChatRoom()) }}><img style={{ borderRadius: "25px" }} src={user?.photo} alt="user" /><h2>Profile</h2> </div>
       </span>
-      <div onClick={handleLogout}><img src={logouticon} alt="logout icon" /><h2>Logout</h2> </div>
+      {/* to handle logout */}
+      <Logout />
     </div>
   </>)
 };

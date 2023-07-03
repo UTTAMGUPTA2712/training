@@ -10,8 +10,10 @@ import { useSelector } from 'react-redux';
 import UserDetail from './component/userdetail';
 
 function App() {
+  //getting authdetail to verify weather anyone is logged in or not to move across private or public router
   const userDetail=useSelector(state=>state.auth.authDetail)
-  const privateRouter=[
+  //router accessable to anyone
+  const publicRouter=[
     {
       path:"/",
       component:<Login/>
@@ -21,7 +23,8 @@ function App() {
       component:<SignUp/>
     }
   ]
-  const publicRouter=[
+  // router accessable to only looged user
+  const privateRouter=[
     {
       path:"/",
       component:<HomePage/>
@@ -43,10 +46,11 @@ function App() {
   ]
   return (
     <>
+    {/* setting up router*/}
     <BrowserRouter>
     <Routes>
-      {(userDetail==null)&&privateRouter.map((route)=>{return <Route path={route.path} element={route.component}/>})}
-      {(userDetail!=null)&&publicRouter.map((route)=>{return <Route path={route.path} element={route.component}/>})}
+      {(userDetail==null)&&publicRouter.map((route)=>{return <Route path={route.path} element={route.component}/>})}
+      {(userDetail!=null)&&privateRouter.map((route)=>{return <Route path={route.path} element={route.component}/>})}
     </Routes>
     </BrowserRouter>
       </>

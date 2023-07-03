@@ -10,13 +10,13 @@ import persistStore from 'redux-persist/es/persistStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const persistor=persistStore(store)
-
+// initialising persistor with store to persist data
 root.render(
   <React.StrictMode>
+    {/* setting up store */}
     <Provider store={store}>
       <PersistGate persistor={persistor}>
       <App />
-
       </PersistGate>
     </Provider>
   </React.StrictMode>

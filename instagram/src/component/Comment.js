@@ -5,11 +5,13 @@ import { useSelector } from 'react-redux'
 import commenticon from "../assets/images/comment.png"
 import { Modal } from 'antd';
 import InputEmoji from "react-input-emoji";
-
+//  handle comment of a post
 const Comment = ({ comments, id, sender }) => {
+    // initialize comments and modalopen  and get logged user
     const [userComment, setUserComment] = useState("")
     const [open, setOpen] = useState(false);
     const currentUser = useSelector((state) => state.auth.authDetail)
+    // triggers for comment modal
     const showModal = () => {
         setOpen(true);
     };
@@ -19,7 +21,9 @@ const Comment = ({ comments, id, sender }) => {
     const handleCancel = () => {
         setOpen(false);
     };
+    // add comments 
     const AddComment = async () => {
+        // update the comment of the post by adding the new comment
         await updateDoc(doc(db, "Posts", id), {
             comment: arrayUnion({
                 user: currentUser.username,
@@ -27,6 +31,7 @@ const Comment = ({ comments, id, sender }) => {
             })
         })
         setUserComment("")
+        // add notification to the sender of the post
         const notificationData = {
             detail: `${currentUser.username} commented ${userComment} on your post with PostId ${id}`,
             time: (new Date()).toUTCString()
@@ -37,6 +42,7 @@ const Comment = ({ comments, id, sender }) => {
     }
     return (
         <>
+        {/* comment modal */}
             <Modal
                 open={open}
                 title="COMMENTS"
@@ -44,6 +50,7 @@ const Comment = ({ comments, id, sender }) => {
                 onCancel={handleCancel}
                 width={"30rem"}
                 footer={[]}>
+                    {/* showing comment */}
                 <div id='comments'>{
                     comments?.map((comment) => {
                         return <div>
@@ -52,6 +59,7 @@ const Comment = ({ comments, id, sender }) => {
                     })
                 }</div>
                 <div id="textSender">
+                    {/* text box with emoji feature */}
                     <InputEmoji
                         value={userComment}
                         onChange={setUserComment}
@@ -61,6 +69,7 @@ const Comment = ({ comments, id, sender }) => {
                     />
                 </div>
             </Modal>
+            {/* trigger comment modal */}
             <img onClick={showModal} src={commenticon} alt='Comment Icon' />
         </>
     )
