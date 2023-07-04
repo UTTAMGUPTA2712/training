@@ -13,6 +13,7 @@ const SignUp = () => {
     const [user, setUser] = useState({ photo: "https://img.icons8.com/?size=512&id=83190&format=png" })
     // to check weather the user exist or not
     const [valid, setValid] = useState(false)
+    const [emailValid, setEmailValid] = useState(false)
     // to dispatch the action
     const dispatch = useDispatch()
     // to navigate through router
@@ -33,15 +34,19 @@ const SignUp = () => {
     const ManualSignUp = async (e) => {
         e.preventDefault()
         //  checking if user exist
-        const userData = await CheckUsers(user.email)
-        if (userData === "") {
-            // if user doesnot exist add it then save in store and move to homepage 
-            const data = await AddUser(user)
-            dispatch(saveAuthDetail(data))
-            navigate("/")
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user?.email)) {
+            const userData = await CheckUsers(user.email)
+            if (userData === "") {
+                // if user doesnot exist add it then save in store and move to homepage 
+                const data = await AddUser(user)
+                dispatch(saveAuthDetail(data))
+                navigate("/")
+            } else {
+                //  else telling that user already exist
+                setValid(true)
+            }
         } else {
-            //  else telling that user already exist
-            setValid(true)
+            setEmailValid(true)
         }
     }
     return (
@@ -67,6 +72,7 @@ const SignUp = () => {
                                 {/* unless all the field are filled the button is disabled  */}
                                 <button disabled={!(user?.username && user.email && user.password)} onClick={ManualSignUp}>Sign up</button>
                                 {valid && <span>User Already Exist</span>}
+                                {emailValid && <span>Invalid Email</span>}
                             </form>
                         </div>
                         <div id="route">
