@@ -188,6 +188,7 @@ button {
   }
   & p {
     max-width: 100%;
+    overflow-y: hidden;
     word-break: break-all;
   }
   .time{
