@@ -77,7 +77,7 @@ app.post("/", async (req, res) => {
 })
 const getData = async (data) => {
     try {
-        const weather = await fetch(`https://api.openweathe'rmap.org/data/2.5/weather?q=${data}&appid=${api}`)
+        const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${data}&appid=${api}`)
         return weather.json()
     } catch (err) {
         return APIERROR
