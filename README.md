@@ -8,10 +8,10 @@
 
 ## API COMMANDS 
 
-[click to read api command online](https://www.mongodb.com/docs/drivers/node/current/)
-[click to read all mongosh commands](https://www.mongodb.com/docs/manual/reference/method/)
+- [click to read api command online](https://www.mongodb.com/docs/drivers/node/current/)
+- [click to read all mongosh commands](https://www.mongodb.com/docs/manual/reference/method/)
 
-### format db.collection.{THE-CAMMAND-YOU-WANT-TO-USE}
+### FORMAT => db.collection.{THE-CAMMAND-YOU-WANT-TO-USE}
 
 - query==> any special query you want to use if uses as {} gives all the docs
 - doc==>document
@@ -21,7 +21,7 @@
 
 **.findOne(query)** : uses a query to find only one doc whichever it find at first
 
-**.find(query)** : uses query to give multiple output if none is given (ie**. {}) it will give all the data
+**.find(query)** : uses query to give multiple output if none is given (ie. {}) it will give all the data
 
 **.insertOne(doc)** : insert one doc into collection if collection doesnot exist it creates one
 
@@ -31,7 +31,7 @@
 
 **.findOneAndUpdate(filter,query,doc)** : if you need updated document after update use this
 
-**.updateMany(filter,query**.doc)** : method accepts a filter document and an update document
+**.updateMany(filter,query.doc)** : method accepts a filter document and an update document
 
 **.replaceOne(query, replacement)** : it replaces the first document that matches the query 
 
@@ -45,9 +45,9 @@
 
 **.countDocuments(query)** : uses query to find number of match and return a number
 
-**.estimatedDocumentCount(query)** : returns an estimation of the number of documents in the collection based on collection metadata**.
+**.estimatedDocumentCount(query)** : returns an estimation of the number of documents in the collection based on collection metadata.
 
-**.distinct(field,query)** : return the distincts data of the field w**.r.t. field and query
+**.distinct(field,query)** : return the distincts data of the field w.r.t. field and query
 
 **.command()** : Call the command() method with your command object on an instance of a database for diagnostic and administrative tasks such as fetching server stats or initializing a replica set.
 
