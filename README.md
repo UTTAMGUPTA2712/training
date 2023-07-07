@@ -6,6 +6,57 @@
 - npm i antd
 - npm i axios redux-thunk                
 
+## API COMMANDS 
+
+[click to read api command online](https://www.mongodb.com/docs/drivers/node/current/)
+[click to read all mongosh commands](https://www.mongodb.com/docs/manual/reference/method/)
+
+### format db.collection.{THE-CAMMAND-YOU-WANT-TO-USE}
+
+- query==> any special query you want to use if uses as {} gives all the docs
+- doc==>document
+- option==>to validate order ie. {ordered:true}
+- filter==> to filter the docs
+- field==> data entry of a document should be used as string else will get a error
+
+**.findOne(query)** : uses a query to find only one doc whichever it find at first
+
+**.find(query)** : uses query to give multiple output if none is given (ie**. {}) it will give all the data
+
+**.insertOne(doc)** : insert one doc into collection if collection doesnot exist it creates one
+
+**.insertMany(docs,options)** : insert many docs and can have extra options 
+
+**.updateOne(filter,query,doc)** : accepts a filter document and an update document
+
+**.findOneAndUpdate(filter,query,doc)** : if you need updated document after update use this
+
+**.updateMany(filter,query**.doc)** : method accepts a filter document and an update document
+
+**.replaceOne(query, replacement)** : it replaces the first document that matches the query 
+
+**.findOneAndReplace(query, replacement)** : if you need updated document after replacement use this
+
+**.deleteOne(query)** : use query to find doc and delete first one that matches it if no qeury is given then deletes the first doc in collection 
+
+**.findOneAndDelete(query)** : if need the deleted doc when you delete it use this one
+
+**.deleteMany(query)** : deletes multiple file who matches the query
+
+**.countDocuments(query)** : uses query to find number of match and return a number
+
+**.estimatedDocumentCount(query)** : returns an estimation of the number of documents in the collection based on collection metadata**.
+
+**.distinct(field,query)** : return the distincts data of the field w**.r.t. field and query
+
+**.command()** : Call the command() method with your command object on an instance of a database for diagnostic and administrative tasks such as fetching server stats or initializing a replica set.
+
+**.watch()** : watches over the database and creates and straeam of object for every change that occur in the document
+
+**.bulkWrite()** : to use multiple commands like :- insertOne,updateOne,updateMany,deleteOne,deleteMany,replaceOne use these in and array format
+
+
+
 ## MONGODB QUERIES
 
 to filter the data in aggregate method  it can have multiple comparator like $gt $eq by default it is eq 
