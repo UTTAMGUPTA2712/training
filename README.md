@@ -1,5 +1,9 @@
 # TRAINING
 
+$$
+khcacbshb
+$$ : xbsxbkxbxb
+
 ## USEFUL NPM PACKAGE
 
 - npm i @reduxjs/toolkit react-redux react-router-dom redux-persist
