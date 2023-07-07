@@ -8,8 +8,9 @@
 
 ## API COMMANDS 
 
-[click to read api command online](https://www.mongodb.com/docs/drivers/node/current/)
-[click to read all mongosh commands](https://www.mongodb.com/docs/manual/reference/method/)
+- [click to read api command online](https://www.mongodb.com/docs/drivers/node/current/)
+
+- [click to read all mongosh commands](https://www.mongodb.com/docs/manual/reference/method/)
 
 ### format db.collection.{THE-CAMMAND-YOU-WANT-TO-USE}
 
